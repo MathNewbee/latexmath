@@ -1,9 +1,12 @@
 *{padding: 0;margin:0;text-decoration: none;box-sizing: border-box;}
 .container{width:1360px;overflow: auto;margin:0 auto;}
+.foot{margin-top:50px;background-color: #eee;text-align: center;padding:30px 0;}
+.foot p{font-size:14px;line-height: 30px;}
+.foot p a{color:#000;text-decoration: underline;}
 .head{height:60px;background-color: #96b97d;min-width: 1360px;}
-.logo{padding-top: 10px;width:80px;text-align: center;}
-.add-text{font-size:30px;line-height: 25px; color:#fff;letter-spacing: -3px;}
-.editor-text{font-size:16px;color:#fff;line-height: 13px;}
+.logo{padding-top: 10px;width:140px;text-align: center;margin-left:10px}
+.add-text{font-size:30px;line-height: 25px; color:#fff;letter-spacing: -2px;}
+.editor-text{font-size:16px;color:#fff;line-height: 20px;letter-spacing: 1px;}
 
 @-webkit-keyframes scale {
     0% {
@@ -60,7 +63,7 @@
 .loading-cover{position: absolute;width:100%;height: 100%;background-color: #96b97d;z-index: 999;}
 .loading{width:300px;text-align: center;margin:0 auto;margin-top:300px}
 .loader{margin-top:10px}
-.loading .big-text{font-size:50px;; color:#fff;letter-spacing: -3px;line-height: 0.9;}
+.loading .big-text{font-size:50px;; color:#fff;letter-spacing: -3px;line-height: 1;}
 .loading .small-text{font-size:30px;color:#fff;line-height: 0.8;}
 
 .content{overflow: hidden;margin-top:10px;}
@@ -114,7 +117,7 @@
 
 .size-minus{cursor: pointer;font-size: 32px;padding:0 5px;background-color: #ccc;border: none;outline: none;float:right;height: 27px;line-height: 27px;}
 .size-add{cursor: pointer;font-size: 20px;padding:0 5px;background-color: #ccc;border: none;outline: none;float:right;height: 30px;line-height: 30px;}
-.show{width:1350px;height: 320px;font-size:30px;overflow:auto;}
+.show{width:1350px;height: 500px;font-size:30px;overflow:auto;}
 
 .type-list{overflow: hidden;border-bottom:2px solid #96b97d;padding-bottom:8px}
 .type-box{ padding:5px ; width:46px;font-size:12px;text-align: center;height: 40px;float: left;background-color: #fff;margin-left:8px;margin-top:8px;border:2px solid #ddd}
