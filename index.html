@@ -1,0 +1,975 @@
+<html>
+<head>
+<title></title>
+<meta   charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online LaTeX Equation Editor - Free Math Editor</title>
+<meta name="description" content="Write latex math equations, formulas, and symbols easily with the free online latex equation editor. Code autocomplete and intellisense. Supports formulas for physics, chemistry. Equation can be exported as JPG, PNG, SVG."/>
+<meta name="keywords" content="Online Equation Editor, Online Math Editor, Math Editor, Equation Editor, Latex Math Editor, Online editor, " />
+<meta name="robots" content="all" />
+<meta name="author" content="Add Editor" />
+<meta name="copyright" content="Add Editor" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<script>
+MathJax = {
+	loader: {load: ['[tex]/cancel' , '[tex]/unicode' , '[tex]/ams' , '[tex]/require' , '[tex]/color' , '[tex]/bbox'] , },
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		packages: {'[+]': ['ams','color','bbox' , "cancel" , "unicode" ]},
+	},
+
+  	startup: {
+		ready:()=>{
+			$("t").each(function(){
+				if(!$(this).attr("code")){
+					var code = $(this).text();
+					code = code.substring(1 , code.length-1)
+					$(this).attr("title" , code)
+					$(this).attr("code" , code)
+				}
+			})
+			$(".loading-cover").hide()
+			$(".container").show();
+			return MathJax.startup.defaultReady();
+		},
+		pageReady: () => {
+			console.log('Running MathJax');                                                                                                                             
+			window.mathjax_loaded = true // PUT YOUR CODE HERE
+			Main.init()
+			return MathJax.startup.defaultPageReady();
+		}
+	}
+};
+
+</script>
+
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" ></script>
+<script src="js/util.js"></script>
+<script src="js/dolist.js"></script>
+<script src="js/parse.js"></script>
+<script src="js/jq.js"></script>
+<script src="js/list.js"></script>
+<script src="js/tips.js"></script>
+<script src="js/dom-to-image.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+</script>
+</head>
+<body>
+<div class="loading-cover">
+	<div class="loading">
+		<div class="big-text">ADD</div>
+		<div class="small-text">EDITOR</div>
+		<div class="loader">
+			<div class="loader-inner ball-pulse">
+			<div></div>
+			<div></div>
+			<div></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="head">
+	<div class="logo">
+		<div class="add-text">ADD</div>
+		<div class="editor-text">EDITOR</div>
+	</div>
+</div>
+
+<div class="container" style="display: none;">
+	<div class="content">
+		<div class="left"></div>
+		<div class="main">
+			<div class="editor-container">
+				<div class="input">
+					<div class="input-title">
+						<span>INPUT</span>
+						<div class="head-function">
+							<span class="line-mode" mode="eqnarray">eqnarray</span>
+							<span class="line-mode" mode="align">align</span>
+							<span class="line-mode" mode="array">array</span>
+						</div>
+					</div>
+					<div  class="editor">
+						<textarea id="code" class="base" spellcheck="false"></textarea>
+						<div class="base editormap" id="show-content"></div>
+					</div>
+				</div>
+
+				<div class="help">
+					<div class="help-head">
+						<div class="type-list">
+							<div class="type-box" top="0">
+								<p><img src="./images/alphabet.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="200">
+								<p><img src="./images/simbol.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="450">
+								<p><img src="./images/frac.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="670">
+								<p><img src="./images/limit.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="750">
+								<p><img src="./images/int.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="857">
+								<p><img src="./images/derivative.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="940">
+								<p><img src="./images/exp.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="1110">
+								<p><img src="./images/sum.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="1352">
+								<p><img src="./images/matrix.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="1563">
+								<p><img src="./images/equation.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="1661">
+								<p><img src="./images/geometry.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="1910">
+								<p><img src="./images/brace.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="1981">
+								<p><img src="./images/vertical.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="2048">
+								<p><img src="./images/lt.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="2293">
+								<p><img src="./images/sim.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="2495">
+								<p><img src="./images/equal.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="2563">
+								<p><img src="./images/set.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="2847">
+								<p><img src="./images/arrow.jpg" alt=""></p>
+							</div>
+							<div class="type-box" top="3190">
+								<p><img src="./images/hat.jpg" alt=""></p>
+							</div>
+
+							<div class="type-box" top="3355">
+								<p><img src="./images/font.jpg" alt=""></p>
+							</div>
+
+						</div>
+					</div>
+					<div class="help-content">
+						<div class="content-list">
+							<div class="catagory">
+								<div class="block">
+									<t style="padding-top: 12px;"><m>$\alpha$</m></t>
+									<t style="padding-top: 5px;"><m>$\beta$</m></t>
+									<t style="padding-top: 8px;"><m>$\Gamma$</m></t>
+									<t style="padding-top: 9px;"><m>$\gamma$</m></t>
+									<t style="padding-top: 7px;"><m>$\Delta$</m></t>
+									<t style="padding-top: 7px;"><m>$\delta$</m></t>
+									<t style="padding-top: 7px;"><m>$\nabla$</m></t>
+									<t style="padding-top: 12px;"><m>$\epsilon$</m></t>
+									<t style="padding-top: 12px;"><m>$\varepsilon$</m></t>
+									<t style="padding-top: 4px;"><m>$\zeta$</m></t>
+									<t style="padding-top: 9px;"><m>$\eta$</m></t>
+									<t style="padding-top: 7px;"><m>$\Theta$</m></t>
+									<t style="padding-top: 7px;"><m>$\theta$</m></t>
+									<t style="padding-top: 8px;"><m>$\vartheta$</m></t>
+									<t style="padding-top: 12px;"><m>$\iota$</m></t>
+									<t style="padding-top: 11px;"><m>$\kappa$</m></t>
+									<t style="padding-top: 7px;"><m>$\Lambda$</m></t>
+									<t style="padding-top: 7px;"><m>$\lambda$</m></t>
+									<t style="padding-top: 9px;"><m>$\mu$</m></t>
+									<t style="padding-top: 11px;"><m>$\nu$</m></t>
+									<t style="padding-top: 7px;"><m>$\Xi$</m></t>
+									<t style="padding-top: 3px;"><m>$\xi$</m></t>
+									<t style="padding-top: 8px;"><m>$\Pi$</m></t>
+									<t style="padding-top:7px"><m>$\amalg$</m></t>
+									<t style="padding-top: 12px;"><m>$\pi$</m></t>
+									<t style="padding-top: 12px;"><m>$\varpi$</m></t>
+									<t style="padding-top: 9px;"><m>$\rho$</m></t>
+									<t style="padding-top: 9px;"><m>$\varrho$</m></t>
+									<t style="padding-top: 8px;"><m>$\Sigma$</m></t>
+									<t style="padding-top: 12px;"><m>$\sigma$</m></t>
+									<t style="padding-top: 10px;"><m>$\varsigma$</m></t>
+									<t style="padding-top: 12px;"><m>$\tau$</m></t>
+									<t style="padding-top: 7px;"><m>$\Upsilon$</m></t>
+									<t style="padding-top: 12px;"><m>$\upsilon$</m></t>
+									<t style="padding-top: 8px;"><m>$\Phi$</m></t>
+									<t style="padding-top: 4px;"><m>$\phi$</m></t>
+									<t style="padding-top: 9px;"><m>$\varphi$</m></t>
+									<t style="padding-top: 9px;"><m>$\chi$</m></t>
+									<t style="padding-top: 8px;"><m>$\Psi$</m></t>
+									<t style="padding-top: 4px;"><m>$\psi$</m></t>
+									<t style="padding-top: 7px;"><m>$\Omega$</m></t>
+									<t style="padding-top:8px"><m>$\mho$</m></t>
+									<t style="padding-top: 12px;"><m>$\omega$</m></t>
+									
+									<t style="padding-top: 7px;"><m>$\aleph$</m></t>
+									<t style="padding-top: 5px;"><m>$\beth$</m></t>
+									<t style="padding-top: 5px;"><m>$\daleth$</m></t>
+									<t style="padding-top:4px"><m>$\complement$</m></t>
+									<t style="padding-top:9px"><m style="zoom:130%">$\backepsilon$</m></t>
+									<t style="padding-top:6px"><m>$\eth$</m></t>
+									<t style="padding-top:7px"><m>$\hbar$</m></t>
+									<t style="padding-top:7px"><m>$\Im$</m></t>
+									<t style="padding-top:9px"><m style="zoom:130%">$\imath$</m></t>
+									<t style="padding-top:7px"><m>$\jmath$</m></t>
+									<t style="padding-top:4px"><m>$\Bbbk$</m></t>
+									<t style="padding-top:7px"><m>$\ell$</m></t>
+									<t style="padding-top:8px"><m>$\wp$</m></t>
+									<t style="padding-top:8px"><m>$\Re$</m></t>
+									<t style="padding-top:7px"><m>$\Game$</m></t>
+									<t style="padding-top:5px"><m>$\flat$</m></t>
+								</div>
+								
+								<!-- 二元 -->
+								<div class="block">
+									<t><m>$\times$</m></t>
+									<t><m>$\div$</m></t>
+									<t style="padding-top:7px"><m>$\pm$</m></t>
+									<t style="padding-top:8px"><m>$\mp$</m></t>
+									<t style="padding-top:12px"><m>$\propto$</m></t>
+									<t style="padding-top:12px"><m>$\varpropto$</m></t>
+									<t style="padding-top:12px"><m>$\infty$</m></t>
+									<t style="padding-top:15px"><m>$\smile$</m></t>
+									<t style="padding-top:15px"><m>$\frown$</m></t>
+									<t style="padding-top:12px"><m>$\asymp$</m></t>
+									<t style="padding-top:2px"><m>$\between$</m></t>
+									<t style="padding-top:7px"><m>$\pitchfork$</m></t>	
+									<div class="clear"></div> 
+								
+
+									<div class="clear"></div>
+									<t style="padding-top:10px"><m>$\star$</m></t>
+									<t style="padding-top:12px"><m>$\ast$</m></t>
+									<t style="padding-top:5px"><m>$\bigstar$</m></t>
+									<t style="padding-top:7px;"><m style="zoom:80%">$\dagger$</m></t>
+									<t style="padding-top:7px;"><m style="zoom:80%">$\ddagger$</m></t>
+									<t style="padding-top:8px"><m>$\wr$</m></t>
+									
+									<t style="padding-top:5px"><m>$\heartsuit$</m></t>
+									<t style="padding-top:5px"><m>$\clubsuit$</m></t>
+									<t style="padding-top:5px"><m>$\spadesuit$</m></t>
+									<t style="padding-top:6px"><m>$\And$</m></t>
+									<t style="padding-top:4px"><m>$\natural$</m></t>
+									<t style="padding-top:4px"><m>$\sharp$</m></t>
+									<t style="padding-top:4px"><m>$\circledS$</m></t>
+
+									<div class="clear"></div>
+									<t style="padding-top:7px"><m>$\angle$</m></t>
+									<t style="padding-top:10px"><m>$\sphericalangle$</m></t>
+									<t style="padding-top:7px"><m>$\measuredangle$</m></t>
+									<t style="padding-top:7px"><m>$\forall$</m></t>
+									<t style="padding-top:7px"><m>$\exists$</m></t>
+									<t style="padding-top:4px"><m>$\nexists$</m></t>
+									<t style="padding-top:7px"><m>$\Finv$</m></t>
+									<t style="padding-top:6px"><m style="zoom:90%">$\diagup$</m></t>
+									<t style="padding-top:5px"><m style="zoom:95%">$\diagdown$</m></t>
+									<t style="padding-top:5px;"><m style="zoom:85%">$\setminus$</m></t>
+									
+									<t style="padding-top:11px"><m>$\ltimes$</m></t>
+									<t style="padding-top:11px"><m>$\rtimes$</m></t>
+									<t style="padding-top:7px"><m>$\leftthreetimes$</m></t>
+									<t style="padding-top:7px"><m>$\rightthreetimes$</m></t>
+
+									<div class="clear"></div>
+									<t style="padding-top: 2px;"><m>$\parallel$</m></t>
+									<t style="padding-top: 2px;"><m>$\nparallel$</m></t>
+									<t><m style="zoom:130%">$\shortparallel$</m></t>
+									<t><m  style="zoom:130%">$\nshortparallel$</m></t>
+									<t style="padding-top:14px;"><m>$\lnot$</m></t>
+									<t style="padding-top:14px;"><m>$\ulcorner$</m></t>
+									<t style="padding-top:14px;"><m>$\urcorner$</m></t>
+									<t style="padding-top:14px;"><m>$\llcorner$</m></t>
+									<t style="padding-top:14px;"><m>$\lrcorner$</m></t>
+									<div class="clear"></div>
+									
+									<t style="padding-top:16px"><m>$\cdot$</m></t>
+									<t style="padding-top:16px"><m>$\centerdot$</m></t>
+									<t style="padding-top:16px"><m style="zoom:70%">$\ldots$</m></t>
+									<t style="padding-top:16px"><m style="zoom:70%">$\cdots$</m></t>
+									<t><m>$\therefore$</m></t>
+									<t><m>$\because$</m></t>
+								</div>
+
+								<!--分数-->
+								<div class="block bblock">
+									<t code="\tfrac{}{}" pos="4"><m>$\tfrac{a}{b}$</m></t>
+									<t code="\frac{}{}" pos="4"><m style="zoom:120%">$\frac{a}{b}$</m></t>
+									<t><m>$\frac{1}{a+\frac{1}{b}}$</m></t>
+									<t><m>$\cfrac{1}{a+\cfrac{1}{b}}$</m></t>
+									<t><m>$\dfrac{1}{a+\dfrac{1}{b}}$</m></t>
+
+									<div class="clear"></div>
+
+									<t style="height:62px"><m>$\frac{\mathrm{d} y}{\mathrm{d} x}$</m></t>
+									<t style="height:62px"><m>$\frac{\partial y}{\partial x}$</m></t>
+									<t><m>$\frac{\mathrm{d}^2 y}{\mathrm{d} x \mathrm{d} y}$</m></t>
+									<t><m>$\frac{\partial^2 y}{\partial x \partial y}$</m></t>
+								</div>
+
+								<!--Limit-->
+								<div class="block bblock">
+									<t code="\lim " class="zero-margin" style="padding-top:17px;height: 51px;"><m style="zoom:80%">$$\lim a$$</m></t>
+									<t code="\lim_{x \to 0}" class="zero-margin" style="padding-top:10px;height: 51px;"><m style="zoom:80%">$$\lim_{x \to 0}$$</m></t>
+									<t code="\lim_{x \to \infty}" class="zero-margin" style="padding-top:10px;height: 51px;"><m style="zoom:80%">$$\lim_{x \to \infty}$$</m></t>
+									<t code="\textstyle \lim_{x \to 0}" class="zero-margin" style="padding-top:17px;height: 51px;"><m style="zoom:80%">$$\textstyle \lim_{x \to 0}$$</m></t>
+									<t code="\max_{}" pos="2" class="zero-margin" style="padding-top:10px;height: 51px;"><m style="zoom:80%">$$\max_{\Box }\Box$$</m></t>
+									<t code="\min_{}" pos="2" class="zero-margin" style="padding-top:10px;height: 51px;"><m style="zoom:80%">$$\min_{\Box }\Box$$</m></t>
+								</div>
+
+								<!--积分-->
+								<div class="block bblock">
+									<t style="padding-top:26px;height: 78px;"><m style="zoom:80%">$\int$</m></t>
+									<t code="\int_{}^{}" pos="5" style="padding-top:22px;height: 78px;"><m style="zoom:80%">$\int_{a}^{b}$</m></t>
+									<t code="\int\limits_{}^{}" pos="5" style="height: 78px;"><m style="zoom:80%">$\int\limits_{a}^{b}$</m></t>
+
+									<t style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\iint$</m></t>
+									<t code="\iint_{}" pos="2" style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\iint_{D}$</m></t>
+									<t code="\iint\limits_{}" pos="2"  style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\iint\limits_{D}$</m></t>
+
+									<t style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\iiint$</m></t>
+									<t code="\iiint_{}" pos="2" style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\iiint_{\Omega}$</m></t>
+									<t code="\iiint\limits_{}" pos="2" style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\iiint\limits_{\Omega}$</m></t>
+
+									<t style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\oint$</m></t>
+									<t code="\oint_{}" pos="2" style="padding-top:28px;height: 78px;"><m style="zoom:80%">$\oint_{L}$</m></t>
+								</div>
+
+								<!--导数-->
+								<div class="block bblock">
+									<t code="\dot{}" pos="2" style="height:50px;padding-top: 11px;"><m>$\dot{a}$</m></t>
+									<t code="\ddot{}" pos="2"  style="height:50px;padding-top: 11px;"><m>$\ddot{a}$</m></t>
+									<t style="height:50px;padding-top: 11px;"><m>${f}'$</m></t>
+									<t style="height:50px;padding-top: 11px;"><m>${f}''$</m></t>
+									<t style="height:50px;padding-top: 11px;"><m>${f}'''$</m></t>
+									<t style="height:50px;padding-top: 10px;"><m>${f}^{(n)} $</m></t>
+									<t style="height:50px;padding-top: 14px;"><m>$\Delta x$</m></t>
+									<t style="height:50px;padding-top: 14px;"><m>$\Delta y$</m></t>
+									<t style="height:50px;padding-top: 13px;"><m>$\partial y$</m></t>
+									<t style="height:50px;padding-top: 13px;"><m>$\partial x$</m></t>
+								</div>
+
+								<!--根式-->
+								<div class="block bblock">
+									<t code="\sqrt{}" pos="2" style="height: 47px;"><m>$\sqrt{x}$</m></t>
+									<t code="\sqrt[n]{}" pos="2"  style="height: 47px;"><m>$\sqrt[n]{x} $</m></t>
+									<t code="\log_{}{}" pos="4"  style="padding-top: 15px;height: 47px;"><m style="zoom:80%">$\log_{a}{b}$</m></t>
+									<t code="\lg_{}{}" pos="4"  style="padding-top: 15px;height: 47px;"><m style="zoom:80%">$\lg_{a}{b}$</m></t>
+									<t code="\ln_{}{}" pos="4"  style="padding-top: 15px;height: 47px;"><m style="zoom:80%">$\ln_{a}{b}$</m></t>
+									<div class="clear"></div>
+									<t style="padding-top:8px"><m>$x^{a}$</m></t>
+									<t style="padding-top:10px"><m>$x_{a}$</m></t>
+									<t style="padding-top:5px"><m style="zoom:80%">$x_{b}^{a}$</m></t>
+									<t style="padding-top:5px"><m style="zoom:73%">${}_{a}^{b}x$</m></t>
+									<t code="\sideset{_1^2}{_3^4}X_a^b" class="zero-margin" style="padding-top:0;padding-bottom:0"><m>$$ \sideset{_1^2}{_3^4}X_a^b $$</m></t>
+								</div>
+
+								<!--大型运算-->
+								<div class="block bblock">
+									<t style="height: 45px;padding-top:14px"><m style="zoom:80%">$\sum$</m></t>
+									<t code="\sum_{}^{}" pos="5" style="height: 45px;"><m style="zoom:80%">$\sum_{a}^{b}$</m></t>
+									<t code="{\textstyle \sum_{}^{}}" pos="6" style="height: 45px;padding-top:13px"><m style="zoom:60%">${\textstyle \sum_{a}^{b}}$</m></t>
+									<t code="\binom{}{}" pos="4" style="height: 45px;"><m style="zoom:80%">$\binom{a}{b}$</m></t>
+
+									<div class="clear"></div>
+
+									<t style="height: 45px;"><m style="zoom:80%">$\prod$</m></t>
+									<t code="\prod_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\prod_{a}^{b}$</m></t>
+									<t code="{\textstyle \prod_{}^{}}" pos="6"  style="height: 45px;"><m style="zoom:60%">${\textstyle \prod_{a}^{b}}$</m></t>
+									<t style="height: 45px;"><m style="zoom:80%">$\coprod$</m></t>
+									<t code="\coprod_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\coprod_{a}^{b}$</m></t>
+									<t code="{\textstyle \coprod_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \coprod_{a}^{b}}$</m></t>
+
+									<div class="clear"></div>
+
+									<t style="height: 45px;"><m style="zoom:80%">$\bigcup$</m></t>
+									<t code="\bigcup_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\bigcup_{a}^{b}$</m></t>
+									<t code="{\textstyle \bigcup_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigcup_{a}^{b}}$</m></t>
+									<t style="height: 45px;"><m style="zoom:80%">$\bigcap$</m></t>
+									<t code="\bigcap_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\bigcap_{a}^{b}$</m></t>
+									<t code="{\textstyle \bigcap_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigcap_{a}^{b}}$</m></t>
+
+									<div class="clear"></div>
+
+									<t style="height: 45px;"><m style="zoom:80%">$\bigvee$</m></t>
+									<t code="\bigvee_{}^{}" pos="5" style="height: 45px;padding-top:5px"><m style="zoom:80%">$\bigvee_{a}^{b}$</m></t>
+									<t code="{\textstyle \bigvee_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigvee_{a}^{b}}$</m></t>
+									<t style="height: 45px;"><m style="zoom:80%">$\bigwedge$</m></t>
+									<t code="\bigwedge_{}^{}" pos="5" style="height: 45px;padding-top:5px"><m style="zoom:80%">$\bigwedge_{a}^{b}$</m></t>
+									<t code="{\textstyle \bigwedge_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigwedge_{a}^{b}}$</m></t>
+								</div>
+
+								<!--数组-->
+								<div class="block bblock">
+									<div class="block-info">
+										<span>row:</span>
+										<input type="text" class="array_row" value="2">
+										<span>col:</span>
+										<input type="text" class="array_col" value="2">
+									</div>
+									<t class="zero-margin" begin="\begin{matrix}" end="\end{matrix}">
+										<m style="zoom:70%">$$\begin{matrix} a & a\\ a & a \end{matrix}$$</m>
+									</t>
+									<t class="zero-margin" begin="\begin{bmatrix}" end="\end{bmatrix}">
+										<m style="zoom:70%">$$\begin{bmatrix} a & a\\ a & a \end{bmatrix}$$</m>
+									</t>
+									<t class="zero-margin" begin="\begin{pmatrix}" end="\end{pmatrix}">
+										<m style="zoom:70%">$$\begin{pmatrix} a & a\\ a & a \end{pmatrix}$$</m>
+									</t>
+									<t class="zero-margin" begin="\begin{vmatrix}" end="\end{vmatrix}">
+										<m style="zoom:70%">$$\begin{vmatrix} a & a\\ a & a \end{vmatrix}$$</m>
+									</t>
+									<t class="zero-margin" begin="\begin{Vmatrix}" end="\end{Vmatrix}">
+										<m style="zoom:70%">$$\begin{Vmatrix} a & a\\ a & a \end{Vmatrix}$$</m>
+									</t>
+
+									<div class="clear"></div>
+
+									<t class="zero-margin" begin="\left \{ \begin{matrix}" end="\end{matrix}\right.">
+										<m style="zoom:70%">$$\left\{\begin{matrix} a & a\\ a & a \end{matrix}\right.$$</m>
+									</t>		
+									<t class="zero-margin" begin="\left.\begin{matrix}" end="\end{matrix}\right \} ">
+										<m style="zoom:70%">$$\left.\begin{matrix} a & a\\ a & a \end{matrix}\right\}$$</m>
+									</t>	
+									<t class="zero-margin" begin="\begin{Bmatrix}" end="\end{Bmatrix}">
+										<m style="zoom:70%">$$\begin{Bmatrix} a & a\\ a & a \end{Bmatrix}$$</m>
+									</t>	
+								</div>
+
+								<!--方程-->
+								<div class="block bblock">
+									<t class="zero-margin" code="\begin{align} 
+y = & a(x+1) \\ 
+  = & ax+a 
+\end{align}" 
+									pos="20">
+										<m style="zoom:70%">$$\begin{align} y =& a(x+1) \\ =& ax+a \end{align} $$</m>
+									</t>
+									<t class="zero-margin" code="\begin{cases}
+y = x \\ 
+y = x^2 
+\end{cases}" 							pos="20">
+										<m style="zoom:70%">$$\begin{cases} y=x \\y=x^2\end{cases} $$</m>
+									</t>
+								</div>
+								
+								<!-- 几何图形 -->
+								<div class="block">
+									<t style="padding-top:13px"><m>$\circ$</m></t>
+									<t style="padding-top:13px"><m>$\bullet$</m></t>
+									<t><m>$\odot$</m></t>
+									<t><m>$\ominus$</m></t>
+									<t><m>$\oslash$</m></t>
+									<t><m>$\oplus$</m></t>
+									<t><m>$\otimes$</m></t>
+									<t style="padding-top:4px"><m>$\bigcirc$</m></t>
+									<div class="clear"></div>
+									<t><m>$\triangleleft$</m></t>
+									<t><m>$\lhd$</m></t>
+									<t><m>$\vartriangleleft$</m></t>
+									<t><m>$\blacktriangleleft$</m></t>
+									<t style="padding-top:6px"><m>$\unlhd$</m></t>
+									<t style="padding-top:6px"><m>$\trianglelefteq$</m></t>
+									
+									<t style="padding-top:4px"><m>$\ntriangleleft$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\ntrianglelefteq$</m></t>
+									<div class="clear"></div>
+
+									<t><m>$\triangleright$</m></t>
+									<t><m>$\rhd$</m></t>
+									<t><m>$\vartriangleright$</m></t>
+									<t><m>$\blacktriangleright$</m></t>
+									<t style="padding-top:6px"><m>$\unrhd$</m></t>
+									<t style="padding-top:6px"><m>$\trianglerighteq$</m></t>
+									<t style="padding-top:4px"><m>$\ntriangleright$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\ntrianglerighteq$</m></t>
+								
+									<div class="clear"></div>
+									
+									<t><m>$\vartriangle$</m></t>
+									<t><m>$\triangledown$</m></t>
+									<t><m>$\blacktriangle$</m></t>
+									<t><m>$\blacktriangledown$</m></t>
+									<t style="padding-top:6px"><m>$\triangle$</m></t>
+									<t style="padding-top:6px"><m>$\bigtriangleup$</m></t>
+									<t style="padding-top:7px"><m>$\bigtriangledown$</m></t>
+									<t style="padding-top: 7px;"><m>$\nabla$</m></t>
+									<div class="clear"></div>
+									
+									<t style="padding-top:11px"><m>$\diamond$</m></t>
+									<t style="padding-top:5px"><m>$\Diamond$</m></t>
+									<t style="padding-top:5px"><m>$\diamondsuit$</m></t>
+									<t style="padding-top:5px"><m>$\lozenge$</m></t>
+									<t style="padding-top:5px"><m>$\blacklozenge$</m></t>
+									<t style="padding-top:7px"><m>$\Box$</m></t>
+									<t style="padding-top:7px"><m>$\blacksquare$</m></t>
+								</div>
+
+								<!--括号-->
+								<div class="block bblock">
+									<t><m>$( )$</m></t>
+									<t><m>$[ ]$</m></t>
+									<t><m>$\lbrace \rbrace$</m></t>
+									<t><m>$\left \langle  \right \rangle $</m></t>
+									<t><m>$| |$</m></t>
+									<t><m>$\Vert  \Vert $</m></t>
+									<t><m>$\left \lfloor  \right \rfloor$</m></t>
+									<t><m>$\left \lceil  \right \rceil$</m></t>
+									<t code="[ , )" pos="5"><m>$[a,b)$</m></t>
+									<t code="( , ]" pos="5"><m>$(a,b]$</m></t>
+								</div>
+
+								<!--十字-->
+								<div class="block">
+									<t><m>$\perp$</m></t>
+									<t><m>$\bot$</m></t>
+									<t><m>$\intercal$</m></t>
+									<t><m>$\top$</m></t>
+									<t style="padding-top:7px"><m>$\vdash$</m></t>
+									<t style="padding-top:7px"><m>$\Vdash$</m></t>
+									<t style="padding-top:3px"><m>$\models$</m></t>
+									<t style="padding-top:7px"><m>$\Vvdash$</m></t>
+									<t style="padding-top:7px"><m>$\nvdash$</m></t>
+									<t style="padding-top:7px"><m>$\nVdash$</m></t>
+									<t style="padding-top:7px"><m>$\nvDash$</m></t>
+									<t style="padding-top:7px"><m>$\nVDash$</m></t>
+									<t style="padding-top:7px"><m>$\dashv$</m></t>
+								</div>
+
+
+								<!-- 大小 -->
+								<div class="block">
+									<t><m>$\lt$</m></t>
+									<t><m>$\lessdot$</m></t>
+									<t style="padding-top: 6px;"><m>$\le$</m></t>
+									<t style="padding-top: 6px;"><m>$\leqslant$</m></t>
+									<t style="padding-top: 5px;"><m>$\eqslantless$</m></t>
+									<t style="padding-top: 5px;"><m style="zoom:90%">$\leqq$</m></t>
+									<t><m>$\ll$</m></t>
+									<t><m>$\lll$</m></t>
+
+									<div class="clear"></div>
+									<t style="padding-top: 5px;"><m>$\nless$</m></t>
+									<t style="padding-top: 5px;"><m>$\lneq$</m></t>
+									<t style="padding-top: 5px;"><m style="zoom:80%">$\nleq$</m></t>
+									<t style="padding-top: 5px;"><m style="zoom:80%">$\nleqslant$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:80%">$\lneqq$</m></t>
+									<t style="padding-top: 4px;"><m style="zoom:70%">$\nleqq$</m></t>
+									<t style="padding-top: 4px;"><m>$\not\ll$</m></t>
+									<t style="padding-top: 4px;"><m>$\not\lll$</m></t>
+
+									<div class="clear"></div>
+									<t><m>$\gt$</m></t>
+									<t><m>$\gtrdot$</m></t>
+									<t style="padding-top: 6px;"><m>$\ge$</m></t>
+									<t style="padding-top: 6px;"><m>$\eqslantgtr$</m></t>
+									<t style="padding-top: 6px;"><m>$\geqslant$</m></t>
+									<t style="padding-top: 5px;"><m style="zoom:90%">$\geqq$</m></t>
+									<t style="padding-top: 8px;"><m>$\gg$</m></t>
+									<t style="padding-top: 8px;"><m>$\ggg$</m></t>
+									<div class="clear"></div>
+
+									<t style="padding-top: 6px;"><m style="zoom: 90%;">$\ngtr$</m></t>
+									<t style="padding-top: 7px;"><m style="zoom: 90%;">$\gneq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 75%;">$\ngeq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 75%;">$\ngeqslant$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 80%;">$\gneqq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 80%;">$\gvertneqq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 90%;">$\not\gg$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 90%;">$\not\ggg$</m></t>
+
+									<div class="clear"></div>
+									<t style="padding-top: 6px;"><m style="zoom: 90%;">$\lessgtr$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 90%;">$\gtrless$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 60%;">$\gtreqless$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 60%;">$\lesseqgtr$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom: 60%;">$\lesseqqgtr$</m></t>
+									
+								</div>
+
+								<!-- 相似 -->
+								<div class="block">
+									<t style="padding-top: 15px;"><m>$\sim$</m></t>
+									<t style="padding-top: 15px;"><m>$\backsim$</m></t>
+									<t style="padding-top: 15px;"><m>$\thicksim$</m></t>
+									<t style="padding-top: 12px;"><m>$\nsim$</m></t>
+									<t style="padding-top: 12px;"><m>$\simeq$</m></t>
+									<t style="padding-top: 12px;"><m>$\backsimeq$</m></t>
+									<t style="padding-top: 12px;"><m>$\eqsim$</m></t>
+									<t style="padding-top: 12px;"><m>$\approx$</m></t>
+									<t style="padding-top: 12px;"><m>$\thickapprox$</m></t>
+									<t style="padding-top: 9px;"><m>$\approxeq$</m></t>
+									<t style="padding-top: 10px;"><m>$\cong$</m></t>
+									<t style="padding-top: 6px;"><m>$\ncong$</m></t>
+									<div class="clear"></div>
+
+									
+									
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\lesssim$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\lnsim$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\lessapprox$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\lnapprox$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\gtrsim$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\gnsim$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\gtrapprox$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\gnapprox$</m></t>
+									<div class="clear"></div>
+
+									<t><m>$\prec$</m></t>
+									<t style="padding-top: 7px;"><m style="zoom:90%">$\preceq$</m></t>
+									<t style="padding-top: 7px;"><m style="zoom:75%">$\precsim$</m></t>
+									<t style="padding-top: 8px;"><m style="zoom:90%">$\preccurlyeq$</m></t>
+									<t style="padding-top: 8px;"><m style="zoom:90%">$\curlyeqprec$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\precapprox$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:85%">$\nprec$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\npreceq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\precnsim$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\precneqq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\precnapprox$</m></t>
+
+									<div class="clear"></div>
+									<t><m>$\succ$</m></t>
+									<t style="padding-top: 7px;"><m style="zoom:90%">$\succeq$</m></t>
+									<t style="padding-top: 7px;"><m style="zoom:75%">$\succsim$</m></t>
+									<t style="padding-top: 8px;"><m style="zoom:90%">$\succcurlyeq$</m></t>
+									<t style="padding-top: 8px;"><m style="zoom:90%">$\curlyeqsucc$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\succapprox$</m></t>
+									
+									<t style="padding-top: 6px;"><m style="zoom:85%">$\nsucc$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\nsucceq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\succnsim$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\succneqq$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:75%">$\succnapprox$</m></t>
+								</div>
+
+								<!-- 相等 不相等 -->
+								<div class="block">
+									<t style="padding-top:12px"><m>$\bumpeq$</m></t>
+									<t style="padding-top:12px"><m>$\Bumpeq$</m></t>
+									<t style="padding-top:16px"><m>$\eqcirc$</m></t>
+									<t><m>$\doteq$</m></t>
+									<t style="padding-top:8px"><m>$\doteqdot$</m></t>
+									<t style="padding-top:8px"><m>$\risingdotseq$</m></t>
+									<t style="padding-top:8px"><m>$\fallingdotseq$</m></t>
+									<t style="padding-top:8px"><m>$\circeq$</m></t>
+									<t style="padding-top:7px"><m>$\triangleq$</m></t>
+									<t style="padding-top: 5px;"><m style="zoom:90%">$\ne$</m></t>
+									<t style="padding-top: 12px;"><m>$\equiv$</m></t>
+									<t style="padding-top: 3px;"><m>$\not\equiv$</m></t>
+								</div>
+
+
+								<!-- 集合运算 -->
+								<div class="block">
+									<t><m>$\cup$</m></t>
+									<t><m>$\sqcup$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:80%">$\bigcup$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:80%">$\bigsqcup$</m></t>
+									<t><m>$\uplus$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:80%">$\biguplus$</m></t>
+									<t><m>$\Cup$</m></t>
+									<div class="clear"></div>
+
+									<t><m>$\cap$</m></t>
+									<t><m>$\sqcap$</m></t>
+									<t style="padding-top: 6px;"><m style="zoom:80%">$\bigcap$</m></t>
+									<t><m>$\Cap$</m></t>
+									<div class="clear"></div>
+
+									<t><m>$\subset$</m></t>
+									<t><m>$\sqsubset$</m></t>
+									<t style="padding-top:8px"><m style="zoom:90%">$\subseteq$</m></t>
+									<t><m>$\Subset$</m></t>
+									<t style="padding-top:8px"><m style="zoom:90%">$\sqsubseteq$</m></t>
+									<t style="padding-top:7px"><m style="zoom:78%">$\subseteqq$</m></t>
+									<t style="padding-top:7px"><m style="zoom:90%">$\subsetneq$</m></t>
+									<t style="padding-top:7px"><m style="zoom:90%">$\varsubsetneq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\nsubseteq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\subsetneqq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\varsubsetneqq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\nsubseteqq$</m></t>
+									<div class="clear"></div>
+									
+									<t><m>$\supset$</m></t>
+									<t><m>$\sqsupset$</m></t>
+									<t style="padding-top:8px"><m style="zoom:90%">$\sqsupseteq$</m></t>
+									<t><m>$\Supset$</m></t>
+									<t style="padding-top:8px"><m style="zoom:90%">$\supseteq$</m></t>
+									<t style="padding-top:7px"><m style="zoom:78%">$\supseteqq$</m></t>
+									<t style="padding-top:7px"><m style="zoom:90%">$\supsetneq$</m></t>
+									<t style="padding-top:7px"><m style="zoom:90%">$\varsupsetneq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\nsupseteq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\supsetneqq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\varsupsetneqq$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\nsupseteqq$</m></t>
+
+									<div class="clear"></div>
+									<t><m>$\lor$</m></t>
+									<t><m>$\vee$</m></t>
+									<t><m>$\curlyvee$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\bigvee$</m></t>
+									<t><m>$\land$</m></t>
+									<t><m>$\wedge$</m></t>
+									<t><m>$\curlywedge$</m></t>
+									<t style="padding-top:6px"><m style="zoom:75%">$\bigwedge$</m></t>
+									<t><m>$\barwedge$</m></t>
+									<t><m>$\veebar$</m></t>
+									<t style="padding-top:6px"><m style="zoom:85%">$\doublebarwedge$</m></t>
+
+									<div class="clear"></div>
+									<t style="padding-top:6px"><m style="zoom:90%">$\emptyset$</m></t>
+									<t><m>$\varnothing$</m></t>
+									<t><m>$\in$</m></t>
+									<t><m>$\ni$</m></t>
+									<t style="padding-top:6px"><m style="zoom:90%">$\notin$</m></t>
+									<t style="padding-top:4px"><m style="zoom:90%">$\setminus$</m></t>
+									<t style="padding-top:11px"><m>$\smallsetminus$</m></t>
+
+									
+									
+								</div>
+
+								<!-- 箭头 -->
+								<div class="block">
+									<t><m>$\rightarrow$</m></t>
+									<t><m>$\to$</m></t>
+									<t style="padding-top:10px"><m>$\rightharpoonup$</m></t>
+									<t style="padding-top:17px"><m>$\rightharpoondown$</m></t>
+									<t style="padding-top:13px"><m>$\rightsquigarrow$</m></t>
+									<t style="padding-top:13px"><m>$\twoheadrightarrow$</m></t>
+									<t style="padding-top:10px"><m>$\mapsto$</m></t>
+									<t style="padding-top:13px"><m>$\rightarrowtail$</m></t>
+									<t style="padding-top:11px"><m>$\hookrightarrow$</m></t>
+									<t style="padding-top:11px"><m>$\longrightarrow$</m></t>
+									<t style="padding-top:11px"><m>$\longmapsto$</m></t>
+									
+									
+									<t style="padding-top:10px"><m>$\Rightarrow$</m></t>
+									
+									<t style="padding-top:10px"><m>$\rightrightarrows$</m></t>
+
+									
+									<t><m>$\Longrightarrow$</m></t>
+									<t><m>$\implies$</m></t>
+									<t style="padding-top:6px"><m>$\Rrightarrow$</m></t>
+									
+									<t style="padding-top:8px"><m>$\looparrowright$</m></t>
+									<t style="padding-top:7px"><m>$\Rsh$</m></t>
+									<t style="padding-top:10px"><m>$\curvearrowright$</m></t>
+									<t style="padding-top:6px"><m>$\circlearrowright$</m></t>
+									<t style="padding-top:13px"><m>$\multimap$</m></t>
+									<t style="padding-top:12px"><m>$\nrightarrow$</m></t>
+									<t style="padding-top:9px"><m>$\nRightarrow$</m></t>
+									<div class="clear"></div>
+
+									<t style="padding-top:10px"><m>$\leftarrow$</m></t>
+									<t style="padding-top:10px"><m>$\gets$</m></t>
+									<t style="padding-top:10px"><m>$\leftharpoonup$</m></t>
+									<t style="padding-top:16px"><m>$\leftharpoondown$</m></t>
+									<t style="padding-top:12px"><m>$\leftarrowtail$</m></t>
+									<t style="padding-top:10px"><m>$\hookleftarrow$</m></t>
+									<t style="padding-top:12px"><m>$\twoheadleftarrow$</m></t>
+									<t style="padding-top:10px"><m>$\longleftarrow$</m></t>
+									<t style="padding-top:10px"><m>$\Leftarrow$</m></t>
+									<t style="padding-top:8px"><m>$\leftleftarrows$</m></t>
+									<t style="padding-top:10px"><m>$\Longleftarrow$</m></t>
+									<t style="padding-top:8px"><m>$\Lleftarrow$</m></t>
+									<t style="padding-top:8px"><m>$\looparrowleft$</m></t>
+									<t style="padding-top:7px"><m>$\Lsh$</m></t>
+									<t style="padding-top:10px"><m>$\curvearrowleft$</m></t>
+									<t style="padding-top:7px"><m>$\circlearrowleft$</m></t>
+									<t style="padding-top:12px"><m>$\nleftarrow$</m></t>
+									<t style="padding-top:9px"><m>$\nLeftarrow$</m></t>
+									<div class="clear"></div>
+									
+									<t><m>$\leftrightarrow$</m></t>
+
+									<t style="padding-top:12px"><m>$\nleftrightarrow$</m></t>
+									<t style="padding-top:13px"><m>$\leftrightsquigarrow$</m></t>
+									<t style="padding-top:10px"><m>$\longleftrightarrow$</m></t>
+									<t style="padding-top:10px"><m>$\leftrightharpoons$</m></t>
+									<t style="padding-top:10px"><m>$\rightleftharpoons$</m></t>
+									<t style="padding-top:8px"><m>$\rightleftarrows$</m></t>
+									<t style="padding-top:8px"><m>$\leftrightarrows$</m></t>
+									<t><m>$\Leftrightarrow$</m></t>
+									<t><m>$\nLeftrightarrow$</m></t>
+									<t><m>$\Longleftrightarrow$</m></t>
+									<t><m>$\iff$</m></t>
+									<div class="clear"></div>
+
+									<t style="padding-top:4px"><m>$\upharpoonleft$</m></t>
+									<t style="padding-top:4px"><m>$\upharpoonright$</m></t>
+									<t style="padding-top:4px"><m>$\uparrow$</m></t>
+									<t style="padding-top:4px"><m>$\upuparrows$</m></t>
+									<t style="padding-top:4px"><m>$\Uparrow$</m></t>
+
+									<t style="padding-top:4px"><m>$\downharpoonleft$</m></t>
+									<t style="padding-top:4px"><m>$\downharpoonright$</m></t>
+									<t style="padding-top:4px"><m>$\downarrow$</m></t>
+									<t style="padding-top:4px"><m>$\downdownarrows$</m></t>
+									<t style="padding-top:4px"><m>$\Downarrow$</m></t>
+									<div class="clear"></div>
+									
+									
+									<t style="padding-top:4px"><m>$\nearrow$</m></t>
+									<t style="padding-top:4px"><m>$\nwarrow$</m></t>
+									<t style="padding-top:4px"><m>$\swarrow$</m></t>
+									<t style="padding-top:4px"><m>$\searrow$</m></t>
+
+									<t style="padding-top:2px"><m>$\updownarrow$</m></t>
+									<t style="padding-top:2px"><m>$\Updownarrow$</m></t>
+									
+								</div>
+
+
+								<!--帽子-->
+								<div class="block bblock">
+									<t code="\hat{}" pos="2" style="padding-top:3px"><m>$\hat{a}$</m></t>
+									<t code="\check{}" pos="2"  style="padding-top:3px"><m>$\check{a}$</m></t>
+									<t code="\grave{}" pos="2"  style="padding-top:3px"><m style="zoom:70%">$\grave a$</m></t>
+									<t code="\acute{}" pos="2"  style="padding-top:3px"><m>$\acute{a}$</m></t>
+									<t code="\tilde{}" pos="2"  style="padding-top:3px"><m>$\tilde{a}$</m></t>
+									<t code="\bar{}" pos="2"  style="padding-top:3px"><m>$\bar{a}$</m></t>
+									<t code="\vec{}" pos="2"  style="padding-top:3px"><m>$\vec{a}$</m></t>
+									<t code="\not{}" pos="2"  style="padding-top:4px"><m style="zoom:90%">$\not{a}$</m></t>
+									<t style="padding-top:8px"><m>$0^{\circ}$</m></t>
+									<t style="padding-top:4px"><m style="zoom:58%">$\overset{a}{ABC}$</m></t>
+									<t style="padding-top:4px"><m style="zoom:58%">$\underset{a}{ABC}$</m></t>
+
+									<div class="clear"></div>
+									<t code="\widetilde{}" pos="2" style="padding-top:10px"><m style="zoom:50%">$\widetilde{ABC}$</m></t>
+									<t code="\widehat{}" pos="2" style="padding-top:9px"><m style="zoom:50%">$\widehat{ABC}$</m></t>
+									<t code="\overleftarrow{}" pos="2" style="padding-top:4px"><m style="zoom:50%">$\overleftarrow{ABC}$</m></t>
+									<t code="\overrightarrow{}" pos="2" style="padding-top:4px"><m style="zoom:50%">$\overrightarrow{ABC}$</m></t>
+									<t code="\overleftrightarrow{}" pos="2" style="padding-top:4px"><m style="zoom:50%">$\overleftrightarrow{ABC}$</m></t>
+									<t code="\overline{}" pos="2" style="padding-top:9px"><m style="zoom:50%">$\overline{ABC}$</m></t>
+									<t code="\overbrace{}" pos="2" style="padding-top:4px"><m style="zoom:50%">$\overbrace{ABC}$</m></t>
+									<t code="\stackrel\frown{}" pos="2" style="padding-top:6px"><m style="zoom:50%">$\stackrel\frown{ABC}$</m></t>
+									
+
+									<div class="clear"></div>
+									
+									<t code="\underleftarrow{}" pos="2"  style="padding-top:10px"><m style="zoom:50%">$\underleftarrow{ABC}$</m></t>
+									<t code="\underrightarrow{}" pos="2"  style="padding-top:10px"><m style="zoom:50%">$\underrightarrow{ABC}$</m></t>
+									<t code="\underleftrightarrow{}" pos="2"  style="padding-top:10px"><m style="zoom:50%">$\underleftrightarrow{ABC}$</m></t>
+									<t code="\underline{}" pos="2"  style="padding-top:11px;height:40px;"><m style="zoom:50%">$\underline{ABC}$</m></t>
+									<t code="\underparen{}" pos="2"  style="padding-top:10px;height:40px;"><m style="zoom:50%">$\underparen{ABC}$</m></t>
+									<t code="\underbrace{}" pos="2"  style="padding-top:10px;height:40px;"><m style="zoom:50%">$\underbrace{ABC}$</m></t>
+
+								</div>
+
+							
+
+
+
+								<div class="block bblock">
+									<t code="{\color{Blue} }" pos="2" ><m style="zoom:70%">${\color{Blue} Blue}$</m></t>
+									<t code="{\color{Brown} }" pos="2" ><m style="zoom:70%">${\color{Brown} Brown}$</m></t>
+									<t code="{\color{Gray} }" pos="2" ><m style="zoom:70%">${\color{Gray} Gray}$</m></t>
+									<t code="{\color{Orange} }" pos="2" ><m style="zoom:70%">${\color{Orange} Orange}$</m></t>
+									<t code="{\color{Peach} }" pos="2" ><m style="zoom:70%">${\color{Peach} Peach}$</m></t>
+									<t code="{\color{Purple} }" pos="2" ><m style="zoom:70%">${\color{Purple} Purple}$</m></t>
+									<t code="{\color{Red} }" pos="2" ><m style="zoom:70%">${\color{Red} Red}$</m></t>
+									<t code="{\color{Tan} }" pos="2" ><m style="zoom:70%">${\color{Tan} Tan}$</m></t>
+									<t code="{\color{Violet} }" pos="2" ><m style="zoom:70%">${\color{Violet} Violet}$</m></t>
+									<t code="{\color{Yellow} }" pos="2" ><m style="zoom:70%">${\color{Yellow} Yellow}$</m></t>
+									<t code="{\color[RGB]{0,0,0} }" pos="2" ><m style="zoom:70%">${\color[RGB]{50,100,150} RGB}$</m></t>
+								</div>
+
+								<div class="block bblock">
+									<t code="\mathrm{}" pos="2"><m style="zoom:65%">$\mathrm{Roman}$</m></t>
+									<t code="\mathbf{}" pos="2"><m style="zoom:65%">$\mathbf{Bold}$</m></t>
+									<t code="\mathit{}" pos="2"><m style="zoom:65%">$\mathit{Italics}$</m></t>
+									<t code="\underline{}" pos="2" style="padding-top:8px"><m style="zoom:65%">$\underline{Underline}$</m></t>
+									<t code="\mathsf{}" pos="2"><m style="zoom:65%">$\mathsf{Sans\ serif}$</m></t>
+									<t code="\mathbb{}" pos="2"><m style="zoom:65%">$\mathbb{Balckboard}$</m></t>
+									<t code="\mathcal{}" pos="2"><m style="zoom:65%">$\mathcal{Calligraphy}$</m></t>
+									<t code="\mathfrak{}" pos="2"><m style="zoom:65%">$\mathfrak{Fraktur}$</m></t>
+								</div>
+
+								<div class="block bblock">
+									<t code="{\tiny }" pos="2" style="padding-top:13px"><m style="zoom:90%">${\tiny tiny } $</m></t>
+									<t code="{\scriptsize }" pos="2" style="padding-top:10px"><m style="zoom:90%">${\scriptsize scriptsize } $</m></t>
+									<t code="{\small }" pos="2"><m style="zoom:90%">${\small small }$</m></t>
+									<t code="{\normalsize }" pos="2"><m style="zoom:90%">${\normalsize normalsize }$</m></t>
+									<t code="{\large }" pos="2"><m style="zoom:90%">${\large large }$</m></t>
+									<t code="{\Large }" pos="2"><m style="zoom:90%">${\Large Large }$</m></t>
+									<t code="{\LARGE }" pos="2"><m style="zoom:90%">${\LARGE LARGE }$</m></t>
+									<t code="{\huge }" pos="2"><m style="zoom:90%">${\huge huge }$</m></t>
+									<t code="{\Huge }" pos="2"><m style="zoom:90%">${\Huge Huge }$</m></t>
+								</div>
+
+							</div>
+
+							<div class="catagory" style="display: none;">
+								<div>
+									<div class="item"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="output">
+					<div class="output-title">
+						<span>OUTPUT</span>
+						<div class="output-zone">
+							<button type="button" class="save-as">Save As Image</button>
+							<button type="button" class="size-add">+</button>
+							<input type="text" class="font-size" value="30" id="font-size">
+							<button type="button" class="size-minus">-</button>
+							<span class="zone-title">SIZE:</span>
+
+							<div class="option-list">
+								<div class="saveimg">
+									<div class="save-as-png">PNG</div>
+									<div class="save-as-jpg">JPG</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="show" id="show">
+						<div class="show-content"></div>
+					</div>
+					
+				</div>
+				<div class="tips">
+					<div class="tip-line now">
+						<span class="tip-name">\1</span>
+						
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+	</div>
+</div>
+
+<div id="tpl-tip" style="display: none;">
+	<div class="tip-line">
+		<div class="tip-name"></div>
+		<div class="tip-img"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+
+
+</script>
+
+</body>
+</html>
