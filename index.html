@@ -17,7 +17,6 @@ MathJax = {
 		inlineMath: [['$', '$'], ['\\(', '\\)']],
 		packages: {'[+]': ['ams','color','bbox' , "cancel" , "unicode" ]},
 	},
-
   	startup: {
 		ready:()=>{
 			$("t").each(function(){
@@ -33,7 +32,7 @@ MathJax = {
 			return MathJax.startup.defaultReady();
 		},
 		pageReady: () => {
-			window.mathjax_loaded = true // PUT YOUR CODE HERE
+			window.mathjax_loaded = true 
 			Main.init()
 			return MathJax.startup.defaultPageReady();
 		}
@@ -46,15 +45,12 @@ MathJax = {
 <script src="js/dom-to-image.min.js"></script>
 <script src="js/jq.js"></script>
 <script src="js/compressed.js"></script>
-<script>
-
-</script>
 </head>
 <body>
 <div class="loading-cover">
 	<div class="loading">
 		<div class="big-text">Latex Math</div>
-		<div class="small-text">equation editor</div>
+		<div class="small-text">online editor</div>
 		<div class="loader">
 			<div class="loader-inner ball-pulse">
 			<div></div>
@@ -68,7 +64,7 @@ MathJax = {
 <div class="head">
 	<div class="logo">
 		<div class="add-text">Latex Math</div>
-		<div class="editor-text">equation editor</div>
+		<div class="editor-text">online editor</div>
 	</div>
 </div>
 
