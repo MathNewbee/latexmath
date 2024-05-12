@@ -76,31 +76,6 @@
 .input{width:664px;border-radius: 5px; border:1px solid #ccc;float:left;}
 .input-title{height:30px;line-height:30px;padding-left:10px;background-color: #ccc;width:663px;border-top-right-radius: 5px;border-top-left-radius: 5px;}
 
-.editor{width:664px;height:570px;position:relative;z-index:1;}
-.editor .base{white-space: nowrap; width:664px; height:570px; font-weight: 400; font-family: "Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace";padding:10px;padding-top:10px; font-size:18px;outline:none;background-color:rgba(255,255,255,0)}
-.editor textarea{border:none; resize: none;position:absolute ; z-index:999;top:0;left:0;color:rgba(0,0,0,0);caret-color:#000;text-decoration: none; font-weight: 400; font-family: "Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace"}
-.editor .editormap{position:absolute ; z-index:1;top:0;left:0;overflow-y: auto; overflow-x: auto; }
-
-.editor .token_blackslash{color:#333} /*块斜线*/
-.editor .not_backslash{color:#ff9d0c} /*转义斜线*/
-.editor .backslash{color:#333}          /*普通斜线*/
-.editor .bracket0{color:#ef29d4}
-.editor .bracket1{color:#109927}
-.editor .bracket2{color:#ff9d0c}
-.editor .not_bracket{color:#ff0000}     /*转义括号*/
-.editor .sign{color: #109927;}          /*符号*/
-.editor .num{color:#000}
-.editor .block_token{color: #c24d17;}
-.editor .token{color:#666}
-.editor .character{color:#c24d17}
-
-
-.tips{position:absolute;top:-1000px;left:-1000px;width:300px;height:200px;border:1px solid #ccc;background-color:#fff;z-index:2;overflow-y: scroll;}
-.tip-line{padding-left:5px;padding-top:2px;padding-bottom: 2px;line-height: 30px;cursor: pointer;}
-.tips .now{background-color:#acd4fd;color:#333;}
-.tip-name{display: inline-block;}
-.tip-name .token{color:#f70000}
-.tip-img{float:right;height:30px;justify-content: center;display: flex;align-items: center;flex-direction: column;margin-right:15px;color:#666;font-size:16px;}
 
 .output{margin-top:10px;border:1px solid #ccc;border-radius: 5px;width:1350px;float: left;}
 .output .output-title{height:30px;line-height:30px;padding-left:10px;background-color: #ccc;width:1349px;border-top-right-radius: 5px;border-top-left-radius: 5px;}
@@ -140,5 +115,34 @@
 .head-function span{background-color:#fff;padding:2px 5px;border-radius: 3px;cursor: pointer;font-size: 14px;margin-left: 5px;}
 .head-function span:hover{background-color: #96b97d;color:#fff;}
 
-.show-content{padding-bottom:30px}
 
+
+.latex-editor{position:relative;z-index:1;border:1px solid #ccc;}
+.latex-editor .base{white-space: nowrap; font-weight: 400; font-family: "Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace";padding:10px;padding-top:10px; font-size:18px;outline:none;background-color:rgba(255,255,255,0)}
+.latex-editor textarea{width:100%;height:100%;border:none; resize: none;position:absolute ; z-index:2;top:0;left:0;color:rgba(0,0,0,0);caret-color:#000;text-decoration: none; font-weight: 400; font-family: "Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace"}
+.latex-editor .latex-show{width:100%;height:100%;position:absolute ; z-index:1;top:0;left:0;overflow-y: auto; overflow-x: auto; }
+
+.latex-editor .token_blackslash{color:#333} 
+.latex-editor .not_backslash{color:#ff9d0c} 
+.latex-editor .backslash{color:#333}          
+.latex-editor .bracket0{color:#ef29d4}
+.latex-editor .bracket1{color:#109927}
+.latex-editor .bracket2{color:#ff9d0c}
+.latex-editor .not_bracket{color:#ff0000}     
+.latex-editor .sign{color: #109927;}          
+.latex-editor .num{color:#000}
+.latex-editor .block_token{color: #c24d17;}
+.latex-editor .token{color:#666}
+.latex-editor .character{color:#c24d17}
+
+
+.latex-editor .tips{position:absolute;top:-1000px;left:-1000px;width:300px;height:200px;border:1px solid #ccc;background-color:#fff;z-index:3;overflow-y: scroll;}
+.latex-editor .tip-line{padding-left:5px;padding-top:2px;padding-bottom: 2px;line-height: 30px;cursor: pointer;}
+.latex-editor .tips .now{background-color:#acd4fd;color:#333;}
+.latex-editor .tip-name{display: inline-block;}
+.latex-editor .tip-name .token{color:#f70000}
+.latex-editor .tip-img{float:right;height:30px;justify-content: center;display: flex;align-items: center;flex-direction: column;margin-right:15px;color:#666;font-size:16px;}
+
+
+#editor{width:664px;height:570px;}
+#show-content{padding-bottom:30px;padding-top:30px;min-height: 400px;}

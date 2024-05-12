@@ -44,7 +44,10 @@ MathJax = {
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" ></script>
 <script src="js/dom-to-image.min.js"></script>
 <script src="js/jq.js"></script>
+<script src="js/util.js"></script>
+<script src="js/list.js"></script>
 <script src="js/compressed.js"></script>
+<script src="js/main.js"></script>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6XK7Q3J9Q"></script>
 <script>
@@ -91,10 +94,13 @@ MathJax = {
 							<span class="line-mode" mode="array">array</span>
 						</div>
 					</div>
-					<div  class="editor">
-						<textarea id="code" class="base" spellcheck="false"></textarea>
-						<div class="base editormap" id="show-content"></div>
+
+					<div id="editor"  class="latex-editor">
+						<textarea class="latex-input base"  spellcheck="false"></textarea>
+						<div class="latex-show base"></div>
+						<div class="tips"></div>
 					</div>
+
 				</div>
 
 				<div class="help">
@@ -938,7 +944,7 @@ y = x^2
 						</div>
 					</div>
 					<div class="show" id="show">
-						<div class="show-content"></div>
+						<div class="show-content" id="show-content"></div>
 					</div>
 					
 				</div>
