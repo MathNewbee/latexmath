@@ -6,7 +6,7 @@ After trying several latex equation editors,  I was not satisfied with them. Th
 <img src="https://github.com/MathNewbee/latexmath/blob/main/images/example.png">
 
 <br><br>
-Next:
+### Next:
 1. build an account system, and save your equations.
 2. add equation sharing.
 3. add math symbol recognition.
