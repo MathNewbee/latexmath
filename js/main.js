@@ -13,7 +13,7 @@ var Main = {
 		})
 		
 		/**
-		 * 保存图片
+		 * save image
 		 */
 		$(".save-as").on("click" , function(event){
 			$(".saveimg").toggle();
@@ -29,7 +29,7 @@ var Main = {
 		})
 
 		/**
-		 * 字体大小
+		 * font-size
 		 */
 		$("#font-size").on("change" , function(){
 			var fontSize = parseInt($(this).val())
@@ -44,7 +44,7 @@ var Main = {
 		})
 
 		/**
-		 * 字体大小
+		 * font-size 
 		 */
 		$(".size-add").on("click" , function(){
 			var fontSize = parseInt($("#font-size").val())
@@ -62,7 +62,7 @@ var Main = {
 		})
 
 		/**
-		 * 字体大小
+		 * font-size 
 		 */
 		$(".size-minus").on("click" , function(){
 			var fontSize = parseInt($("#font-size").val())
@@ -80,7 +80,7 @@ var Main = {
 		})
 
 		/**
-		 * 点击右边提示框，输入内容
+		 * click icon
 		 */
 		$(".catagory t").on("click" , function(){
 
@@ -127,7 +127,7 @@ var Main = {
 		})
 
 		/**
-		 * 帮助内容滚动
+		 * scroll help content
 		 */
 		$(".type-box").on("click" , function(){
 			var top = parseInt($(this).attr("top"));
@@ -144,7 +144,7 @@ var Main = {
 
 
 		/**
-		 * 多行模式
+		 * multi line
 		 */
 		$(".line-mode").on("click" , function(){
 			var mode = $(this).attr("mode").trim()
@@ -171,7 +171,7 @@ var Main = {
 	},
 
 	/**
-	 * 检查tip中的重复内容
+	 * check repeate tip content
 	 */
 	checkSameTip:function(){
 		var map = {}
