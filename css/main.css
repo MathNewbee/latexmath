@@ -3,10 +3,14 @@
 .foot{margin-top:50px;background-color: #eee;text-align: center;padding:30px 0;}
 .foot p{font-size:14px;line-height: 30px;}
 .foot p a{color:#000;text-decoration: underline;}
-.head{height:60px;background-color: #96b97d;min-width: 1360px;}
-.logo{padding-top: 10px;width:140px;text-align: center;margin-left:10px}
+.head{height:60px;background-color: #96b97d;min-width: 1360px;overflow: hidden;}
+.logo{padding-top: 10px;width:160px;text-align: center;margin-left:10px;float:left}
 .add-text{font-size:30px;line-height: 25px; color:#fff;letter-spacing: -2px;}
 .editor-text{font-size:16px;color:#fff;line-height: 20px;letter-spacing: 1px;}
+
+.nav{float: left;line-height: 60px;height: 60px;margin-left: 60px;}
+.nav a{color:#fff;font-size:22px;margin-left:30px}
+.nav a.now{border-bottom:2px solid #fff}
 
 @-webkit-keyframes scale {
     0% {
@@ -146,3 +150,37 @@
 
 #editor{width:664px;height:570px;}
 #show-content{padding-bottom:30px;padding-top:30px;min-height: 400px;}
+
+.tutorial{overflow: hidden;}
+.text-green{color:#109927}
+.text-red{color:#fb0202}
+
+.height100{height: 100px !important;}
+
+.t-left{float:left;width:220px;background-color:#eaf5e2;min-height: 1000px;padding-left:10px;padding-top:100px;}
+.t-left a{color:#000;font-size: 20px;}
+.t-left a:hover{color:#109927;}
+.t-right{float:left;width:1130px;padding-left:50px;padding-top:30px;}
+.t-right h1{text-align: left;font-size:32px;border-bottom:1px solid #ccc;padding-bottom:10px;padding-left: 10px;}
+.t-right .t-content{margin-top:20px;margin-bottom: 10px;font-size: 18px;color:#444;padding-left:10px}
+.t-right code{background-color: #eee;padding:5px 5px;color:#fb0202}
+.t-right l{background-color: #eee;padding:2px 8px;}
+.t-right .title1{font-size:24px;margin-bottom:20px;font-weight: bold;margin-top:100px}
+.t-right .title2{font-size:20px;margin-bottom:5px;font-weight: bold;}
+.t-right p{line-height: 1.85;margin-bottom:30px}
+.t-editor{height: 160px;margin-bottom:15px}
+.t-editor .t-code{width:510px;height:160px;float: left;}
+.t-editor .t-show{width:510px;height:160px;float: left;border:1px solid #ccc;margin-left:15px;overflow: auto;}
+
+
+.t-editor-small{height: 120px;}
+.t-editor-small .t-code{height: 120px;}
+.t-editor-small .t-show{height: 120px;}
+
+.t-editor-large{height: 200px;}
+.t-editor-large .t-code{height: 200px;}
+.t-editor-large .t-show{height: 200px;}
+
+.t-editor-largeX{height: 250px;}
+.t-editor-largeX .t-code{height: 250px;}
+.t-editor-largeX .t-show{height: 250px;}

@@ -3,8 +3,8 @@
 <meta  charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online LaTeX Equation Editor - Free Math Editor</title>
-<meta name="description" content="Write latex math equations, formulas, and symbols easily with the free online latex equation editor. Code autocomplete and IntelliSense. Supports formulas for physics, and chemistry. The equation can be exported as JPG, PNG, or SVG."/>
-<meta name="keywords" content="Online Equation Editor, Online Math Editor, Math Editor, Equation Editor, Latex Math Editor, Online editor" />
+<meta name="description" content="Write LaTeX math equations, formulas, and symbols easily with the free online LaTeX equation editor. Code autocomplete and IntelliSense. Supports formulas for physics, and chemistry. The equation can be exported as JPG, PNG, or SVG."/>
+<meta name="keywords" content="Online Equation Editor, Online Math Editor, Math Editor, Equation Editor, LaTeX Math Editor, Online editor" />
 <meta name="robots" content="all" />
 <meta name="author" content="MathNewbee" />
 <meta name="copyright" content="MathNewbee" />
@@ -16,6 +16,7 @@ MathJax = {
 	tex: {
 		inlineMath: [['$', '$'], ['\\(', '\\)']],
 		packages: {'[+]': ['ams','color','bbox' , "cancel" , "unicode" ]},
+		// tags: 'ams',
 	},
   	startup: {
 		ready:()=>{
@@ -41,7 +42,7 @@ MathJax = {
 
 </script>
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" ></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js" ></script>
 <script src="js/dom-to-image.min.js"></script>
 <script src="js/jq.js"></script>
 <script src="js/util.js"></script>
@@ -61,7 +62,7 @@ MathJax = {
 <body>
 <div class="loading-cover">
 	<div class="loading">
-		<div class="big-text">Latex Math</div>
+		<div class="big-text">LaTeX Math</div>
 		<div class="small-text">online editor</div>
 		<div class="loader">
 			<div class="loader-inner ball-pulse">
@@ -75,8 +76,12 @@ MathJax = {
 
 <div class="head">
 	<div class="logo">
-		<div class="add-text">Latex Math</div>
+		<div class="add-text">LaTeX Math</div>
 		<div class="editor-text">online editor</div>
+	</div>
+	<div class="nav">
+		<a class="now">Editor</a>
+		<a href="/tutorial/intro.html">Tutorial</a>
 	</div>
 </div>
 
@@ -382,35 +387,35 @@ MathJax = {
 								<!--大型运算-->
 								<div class="block bblock">
 									<t style="height: 45px;padding-top:14px"><m style="zoom:80%">$\sum$</m></t>
-									<t code="\sum_{}^{}" pos="5" style="height: 45px;"><m style="zoom:80%">$\sum_{a}^{b}$</m></t>
+									<t class="zero-margin" code="\sum_{}^{}" pos="5" style="height: 45px;"><m style="zoom:40%">$$\sum_{a}^{b}$$</m></t>
 									<t code="{\textstyle \sum_{}^{}}" pos="6" style="height: 45px;padding-top:13px"><m style="zoom:60%">${\textstyle \sum_{a}^{b}}$</m></t>
 									<t code="\binom{}{}" pos="4" style="height: 45px;"><m style="zoom:80%">$\binom{a}{b}$</m></t>
 
 									<div class="clear"></div>
 
 									<t style="height: 45px;"><m style="zoom:80%">$\prod$</m></t>
-									<t code="\prod_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\prod_{a}^{b}$</m></t>
+									<t  class="zero-margin" code="\prod_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:40%">$$\prod_{a}^{b}$$</m></t>
 									<t code="{\textstyle \prod_{}^{}}" pos="6"  style="height: 45px;"><m style="zoom:60%">${\textstyle \prod_{a}^{b}}$</m></t>
 									<t style="height: 45px;"><m style="zoom:80%">$\coprod$</m></t>
-									<t code="\coprod_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\coprod_{a}^{b}$</m></t>
+									<t  class="zero-margin" code="\coprod_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:40%">$$\coprod_{a}^{b}$$</m></t>
 									<t code="{\textstyle \coprod_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \coprod_{a}^{b}}$</m></t>
 
 									<div class="clear"></div>
 
 									<t style="height: 45px;"><m style="zoom:80%">$\bigcup$</m></t>
-									<t code="\bigcup_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\bigcup_{a}^{b}$</m></t>
+									<t   class="zero-margin" code="\bigcup_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:40%">$$\bigcup_{a}^{b}$$</m></t>
 									<t code="{\textstyle \bigcup_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigcup_{a}^{b}}$</m></t>
 									<t style="height: 45px;"><m style="zoom:80%">$\bigcap$</m></t>
-									<t code="\bigcap_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:80%">$\bigcap_{a}^{b}$</m></t>
+									<t  class="zero-margin" code="\bigcap_{}^{}" pos="5" style="height: 45px;padding-top:4px"><m style="zoom:40%">$$\bigcap_{a}^{b}$$</m></t>
 									<t code="{\textstyle \bigcap_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigcap_{a}^{b}}$</m></t>
 
 									<div class="clear"></div>
 
 									<t style="height: 45px;"><m style="zoom:80%">$\bigvee$</m></t>
-									<t code="\bigvee_{}^{}" pos="5" style="height: 45px;padding-top:5px"><m style="zoom:80%">$\bigvee_{a}^{b}$</m></t>
+									<t   class="zero-margin" code="\bigvee_{}^{}" pos="5" style="height: 45px;padding-top:5px"><m style="zoom:40%">$$\bigvee_{a}^{b}$$</m></t>
 									<t code="{\textstyle \bigvee_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigvee_{a}^{b}}$</m></t>
 									<t style="height: 45px;"><m style="zoom:80%">$\bigwedge$</m></t>
-									<t code="\bigwedge_{}^{}" pos="5" style="height: 45px;padding-top:5px"><m style="zoom:80%">$\bigwedge_{a}^{b}$</m></t>
+									<t   class="zero-margin" code="\bigwedge_{}^{}" pos="5" style="height: 45px;padding-top:5px"><m style="zoom:40%">$$\bigwedge_{a}^{b}$$</m></t>
 									<t code="{\textstyle \bigwedge_{}^{}}" pos="6" style="height: 45px;"><m style="zoom:60%">${\textstyle \bigwedge_{a}^{b}}$</m></t>
 								</div>
 

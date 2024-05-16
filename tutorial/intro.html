@@ -1,0 +1,385 @@
+<html>
+<head>
+<meta  charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaTeX Math Introduction - LaTeX Math Tutorial</title>
+<meta name="description" content=""/>
+<meta name="keywords" content="LaTeX Math Tutorial, Online Equation Editor" />
+<meta name="robots" content="all" />
+<meta name="author" content="MathNewbee" />
+<meta name="copyright" content="MathNewbee" />
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+<script>
+MathJax = {
+	loader: {load: ['[tex]/cancel' , '[tex]/unicode' , '[tex]/ams' , '[tex]/require' , '[tex]/color' , '[tex]/bbox'] , },
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		packages: {'[+]': ['ams','color','bbox' , "cancel" , "unicode" ]},
+        // tags: 'ams',
+	},
+  	startup: {
+		ready:()=>{		
+			$(".loading-cover").hide()
+			$(".container").show();
+			return MathJax.startup.defaultReady();
+		},
+		pageReady: () => {
+			window.mathjax_loaded = true 
+			Main.init()
+			return MathJax.startup.defaultPageReady();
+		}
+	}
+};
+
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js" ></script>
+
+<script src="/js/jq.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/list.js"></script>
+<!-- <script src="/js/dolist.js"></script>
+<script src="/js/latex-tip.js"></script>
+<script src="/js/latex-parse.js"></script>
+<script src="/js/latex-editor.js"></script> -->
+<script src="/js/compressed.js"></script>
+<script src="/js/tutorial.js"></script>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V6XK7Q3J9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V6XK7Q3J9Q');
+</script>
+
+<body>
+<div class="loading-cover">
+	<div class="loading">
+		<div class="big-text">LaTeX Math</div>
+		<div class="small-text">online editor</div>
+		<div class="loader">
+			<div class="loader-inner ball-pulse">
+			<div></div>
+			<div></div>
+			<div></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="head">
+	<div class="logo">
+		<div class="add-text">LaTeX Math</div>
+		<div class="editor-text">online editor</div>
+	</div>
+	<div class="nav">
+		<a href="/" >Editor</a>
+		<a class="now">Tutorial</a>
+	</div>
+</div>
+
+<div class="container" style="display: none;">
+	<div class="content tutorial">
+        <div class="t-left">
+            <a href="/tutorial/intro.html" class="now">Introduction</a>           
+        </div>
+        <div class="t-right">
+            <h1>Introduction</h1>
+            <div class="t-content">
+                <p class="title1" style="margin-top:0">1 LaTex Command</p>
+                <p class="title2">1.1 Basic Syntax</p>
+                <p>A LaTeX command begins with the <code>\</code> followed by a command string. Let's look at some examples.</p>
+                <div class="t-editor t-editor-small">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\alpha \quad \beta
+\alpha  \beta</textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <p>
+                    The <code>\alpha</code> command displays <l>$ \alpha $</l>.
+                    The <code>\beta</code> command displays <l>$ \beta $</l>.
+                    The <code>\quad</code> command displays blank space. 
+                    In LaTex, whitespace such as spaces, tabs, and newline is ignored.
+                </p>
+                <p class="title2">1.2 Arguments</p>
+                <p>
+                    A LaTex command may contain options and arguments. The general syntax for commands is <code style="color:#000">\<ic class="text-green">command</ic>[<ic class="text-red"> options </ic>]{<ic class="text-red"> argument1 </ic>}{<ic class="text-red"> argument2 </ic>}</code>.
+                    Let's look at some examples.
+                </p>
+                <div class="t-editor t-editor-large">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\frac{1}{a+b+c}
+\quad                    
+a_{n+1}
+\quad
+a_n
+</textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <p>
+                    Fraction is typeset using <code>\frac</code> command with two arguments. The first argument <code>1</code> is the numerator and the second argument <code>a+b+c</code> is the denominator.
+                    Subscript is typeset using an underscore following with an argument<code>n+1</code>. If the subscript argument contains only one symbol, you can write it without a bracket.
+                </p>
+                <p>
+                    To displays fraction's numerator to the left or right, you should use <code>\cfrac</code> command and add the option <code>[l]</code> or <code>[r]</code>.
+                </p>
+                <div class="t-editor">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\cfrac[l]{1}{a+b+c} 
+\quad
+\cfrac[r]{1}{a+b+c} </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <p class="title1">2 Whitespace and Line Break</p>
+                <p class="title2">2.1 Whitespace</p>
+                <p> In LaTex, whitespace such as spaces, tabs, and newline is ignored. You can use <code>\quad</code> and <code>\qquad</code> to typeset whitespace.</p>
+                <div class="t-editor t-editor-small">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\alpha \beta \quad \pi \qquad \gamma </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">2.2 Line Break</p>
+                <p>
+                    In the default environment, LaTex typeset the equation in a single line. You can use an environment to typeset multi-line equations. 
+                    The command <code>\begin{environment name}</code> and <code>\end{environment name}</code> signify the boundaries of an environment.
+                    The command <code>\\</code> break a line.
+                    The following example uses the <code>align</code> environment to typeset a multi-line equation.
+                    Other environment commands will be introduced later. 
+                </p>
+                <p style="margin-bottom:0">Single Line:</p>
+                <div class="t-editor  t-editor-small">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">    
+y-2x-1 =  x^2 ;\\
+y =  x^2+2x+1</textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <p style="margin-bottom:0">Multiple Line:</p>
+                <div class="t-editor">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{align}
+    y-2x-1 =  x^2 \\
+    y =  x^2+2x+1
+\end{align} 
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">2.3 Column Separator: &</p>
+                <p>
+                    An <code>align</code> environment is a table-like structure, and <code>&</code> is a column separator. 
+                    The columns in an align are right left right left right left ...<br>
+                    Let's look at the example.
+                </p>
+                <div class="t-editor t-editor-large">
+                    <div class="latex-editor t-code">
+
+                        <textarea class="latex-input base"  spellcheck="false">
+\boxed{
+    \begin{align}
+        right|& left & right& |left \\
+        r|& l & r& |l
+    \end{align} 
+}
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <p>To align equations, you can put the <code>&</code> symbol right after the equal sign. The left side is aligned to the right, and the right side is aligned to the left</p>
+                <div class="t-editor  t-editor-large">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{align}
+    y-2x-1 = & x^2 \\
+    y = & x^2+2x+1 \\
+    y = & (x+1)^2
+\end{align} 
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                
+                <p class="title1">3 Common Mathematical Commands</p>
+                <p class="title2">3.1 Fraction</p>
+                <div class="t-editor">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\frac{1}{a+\frac{1}{b}}  \quad 
+\cfrac{1}{a+\cfrac{1}{b}}  \quad 
+\dfrac{1}{a+\dfrac{1}{b}}  \quad 
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">3.2 Limit</p>
+                <div class="t-editor">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\lim  \quad
+\lim_{x \to 0}  \quad
+\lim_{x \to \infty}  \quad     
+\textstyle{ \lim_{x \to 0} }  \quad
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">3.3 integral</p>
+                <div class="t-editor t-editor-largeX">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{align}
+\int    \quad  \int_{a}^{b}   \quad   \int\limits_{a}^{b}  \\
+\iint   \quad  \iint_{D}  \quad   \iint\limits_{D}  \\
+\iiint  \quad  \iiint_{\Omega } \quad   \iiint\limits_{\Omega } \\
+\oint  \quad  \oint_{L} 
+\end{align}
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">3.4 Derivative</p>
+                <div class="t-editor t-editor-largeX">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{align}
+{f}'  {f}'' {f}''' {f}^{(n)}  \\
+\Delta x  \Delta y  \partial y  \partial x   \\
+\frac{ y}{ x}   \frac{\partial y}{\partial x} \\
+\frac{{d}^2 y}{dx dy}   \frac{\partial^2 y}{\partial x \partial y}
+\end{align}
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">3.5 Root, Superscript, and Subscript</p>
+                <div class="t-editor">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{align}
+\sqrt{x} \quad \sqrt[n]{x} \\
+ x^{a} \quad x_{a} \quad x_{b}^{a} \quad \log_{a}{b} \\
+\end{align}
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">3.6 Sum and Product</p>
+                <div class="t-editor">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{align}
+\sum  \sum_{i=1}^{n}  {\textstyle \sum_{i=1}^{n}}  \\
+\prod_{i=1}^{n}  {\textstyle \prod_{i=1}^{n}}  \\
+\end{align}
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p class="title2">3.7 Matrix</p>
+                <div class="t-editor t-editor-largeX">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">
+\begin{matrix}
+1  & 2  \\ 
+3  &  4
+\end{matrix}
+
+\begin{bmatrix}
+1  & 2  \\ 
+3  & 4
+\end{bmatrix}
+
+\begin{pmatrix}
+1  &  2 \\ 
+    3 &  4
+\end{pmatrix}
+
+\begin{vmatrix}
+1  & 2  \\ 
+3  &  4
+\end{vmatrix}
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+	</div>
+</div>
+<div class="foot">
+	<p>Copyright © MathNewbee</p>
+	<p><a href="https://github.com/MathNewbee/latexmath" target="_blank">https://github.com/MathNewbee/latexmath</p>
+</div>
+
+<div id="tpl-tip" style="display: none;">
+	<div class="tip-line">
+		<div class="tip-name"></div>
+		<div class="tip-img"></div>
+	</div>
+</div>
+
+</body>
+</html>
