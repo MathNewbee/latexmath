@@ -158,8 +158,10 @@
 .height100{height: 100px !important;}
 
 .t-left{float:left;width:220px;background-color:#eaf5e2;min-height: 1000px;padding-left:10px;padding-top:100px;}
-.t-left a{color:#000;font-size: 20px;}
+.t-left a{color:#444;font-size: 20px;background: url("/images/tbook.png") 0 2px/22px 22px no-repeat;padding-left:23px;display: block;}
 .t-left a:hover{color:#109927;}
+
+
 .t-right{float:left;width:1130px;padding-left:50px;padding-top:30px;}
 .t-right h1{text-align: left;font-size:32px;border-bottom:1px solid #ccc;padding-bottom:10px;padding-left: 10px;}
 .t-right .t-content{margin-top:20px;margin-bottom: 10px;font-size: 18px;color:#444;padding-left:10px}
