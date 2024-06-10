@@ -164,6 +164,10 @@ var Main = {
 			}
 		})
 
+		$(".lang").on("click" , function(){
+			$(".lang-select").toggle();
+		})
+
 		self.editor.textarea.focus()
 		self.editor.tip.insertContent("e^{i \\pi }+1 = 0")
 

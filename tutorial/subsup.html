@@ -1,0 +1,157 @@
+<html>
+<head>
+<meta  charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaTeX Math Introduction - LaTeX Math Tutorial</title>
+<meta name="description" content=""/>
+<meta name="keywords" content="LaTeX Math Tutorial, Online Equation Editor" />
+<meta name="robots" content="all" />
+<meta name="author" content="MathNewbee" />
+<meta name="copyright" content="MathNewbee" />
+<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+
+<script>
+function show(element){if(!element){ return}element.style.display = "block";}
+function hide(element){if(!element){ return}element.style.display = "none";}
+setTimeout(function(){ hide(document.querySelector(".loading-cover"));show(document.querySelector(".container"))},5000)
+MathJax = {
+	loader: {load: ['[tex]/cancel' , '[tex]/unicode' , '[tex]/ams' , '[tex]/require' , '[tex]/color' , '[tex]/bbox'] , },
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		packages: {'[+]': ['ams','color','bbox' , "cancel" , "unicode" ]},
+        // tags: 'ams',
+	},
+  	startup: {
+		ready:()=>{		
+			$(".loading-cover").hide()
+			$(".container").show();
+			return MathJax.startup.defaultReady();
+		},
+		pageReady: () => {
+			window.mathjax_loaded = true 
+			Main.init()
+			return MathJax.startup.defaultPageReady();
+		}
+	}
+};
+
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js" ></script>
+
+<script src="/js/jq.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/list.js"></script>
+<!-- <script src="/js/dolist.js"></script>
+<script src="/js/latex-tip.js"></script>
+<script src="/js/latex-parse.js"></script>
+<script src="/js/latex-editor.js"></script> -->
+<script src="/js/compressed.js"></script>
+<script src="/js/tutorial.js"></script>
+</head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V6XK7Q3J9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V6XK7Q3J9Q');
+</script>
+
+<body>
+<div class="loading-cover">
+	<div class="loading">
+		<div class="big-text">LaTeX Math</div>
+		<div class="small-text">online editor</div>
+		<div class="loader">
+			<div class="loader-inner ball-pulse">
+			<div></div>
+			<div></div>
+			<div></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="head">
+	<div class="logo">
+		<div class="add-text">LaTeX Math</div>
+		<div class="editor-text">online editor</div>
+	</div>
+	<div class="nav">
+		<a href="/" >Editor</a>
+		<a class="now">Tutorial</a>
+	</div>
+</div>
+
+<div class="container" style="display: none;">
+	<div class="content tutorial">
+        <div class="t-left">
+            <a href="/tutorial/intro.html" >Introduction</a>   
+            <a href="/tutorial/subsup.html" class="now">Superscripts and Subscripts</a>    
+            <!-- <a href="/tutorial/symbol.html" class="now">Math Symbols</a>                  -->
+        </div>
+        <div class="t-right">
+            <h1>Superscripts and Subscripts</h1>
+            <div class="t-content">
+                <p class="title1" style="margin-top:0">1 <code>^</code> and <code>_</code></p>
+                <p class="title2" >1.1 Basic Usage</p>
+                <p>
+                    Superscripts and subscripts are typeset using the symbol <code>^</code> and <code>_</code> . A long-expression needs to be collected in braces.
+                </p>
+                <div class="t-editor t-editor-small">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">a^2+b^2    \quad
+a^{i+2}+b^{i+2}    \quad
+\Omega ^{i+2}</textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <div class="t-editor t-editor-small">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">A_1+B_1    \quad
+A_{n+1}+B_{n+1}    \quad
+\Omega _{n+1}</textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+                <p>The symbols <code>_</code> and <code>^</code> can be combined in the same expression.</p>
+                <div class="t-editor t-editor-small">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\int_a^b    \quad
+A_{n+1}^{i+1}</textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+		
+	</div>
+</div>
+<div class="foot">
+	<p>Copyright © MathNewbee</p>
+	<p><a href="https://github.com/MathNewbee/latexmath" target="_blank">https://github.com/MathNewbee/latexmath</p>
+</div>
+
+<div id="tpl-tip" style="display: none;">
+	<div class="tip-line">
+		<div class="tip-name"></div>
+		<div class="tip-img"></div>
+	</div>
+</div>
+
+</body>
+</html>
