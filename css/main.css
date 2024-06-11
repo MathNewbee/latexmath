@@ -94,7 +94,7 @@
 .output .output-zone span{height: 30px;line-height: 30px;display: block;float:right;}
 .output .output-zone .font-size{width:30px;border:none;outline: none;text-align: center;float:right;height: 20px;margin-top: 5px;}
 .output-zone .zone-title{font-size: 13px;line-height: 30px;}
-.output-zone .save-as{border:none;outline: none;margin-right: 15px;background-color: #fff;margin-top:3px;padding:4px 5px;cursor: pointer;width:99px}
+.output-zone .save-as{border:none;outline: none;margin-right: 15px;background-color: #fff;margin-top:3px;padding:4px 5px;cursor: pointer;min-width:99px}
 .output-zone .saveimg{display:none;position: absolute;width:101px;left:-1px;top:-60px;background-color:#fff;text-align: center;border:1px solid #96b97d;}
 .output-zone .saveimg div{cursor: pointer;}
 .output-zone .saveimg div:hover{background-color:#96b97d ;}
