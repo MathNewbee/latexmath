@@ -2,9 +2,9 @@
 <head>
 <meta  charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LaTeX Math Introduction - LaTeX Math Tutorial</title>
+<title>Fraction in LaTex - LaTeX Math Tutorial</title>
 <meta name="description" content=""/>
-<meta name="keywords" content="LaTeX Math Tutorial, Online Equation Editor" />
+<meta name="keywords" content="Fraction Latex , Fraction in LaTex, frac ,cfrac , dfrac, frac Latex , cfrac Latex, dfrac latex, Latex Math , Latex Mathematics , LaTeX Math Tutorial, Online Equation Editor" />
 <meta name="robots" content="all" />
 <meta name="author" content="MathNewbee" />
 <meta name="copyright" content="MathNewbee" />
@@ -90,23 +90,59 @@ MathJax = {
 	<div class="content tutorial">
         <div class="t-left">
             <a href="/tutorial/intro.html" >Introduction</a>   
-            <a href="/tutorial/fraction.html" >Fraction</a>    
-            <a href="/tutorial/subsup.html" class="now">Superscripts and Subscripts</a>    
+            <a href="/tutorial/fraction.html" class="now">Fraction</a>    
+            <a href="/tutorial/subsup.html">Superscripts and Subscripts</a>    
             <!-- <a href="/tutorial/symbol.html" class="now">Math Symbols</a>                  -->
         </div>
         <div class="t-right">
-            <h1>Superscripts and Subscripts</h1>
+            <h1>Fraction in LaTex</h1>
             <div class="t-content">
-                <p class="title1" style="margin-top:0">1 <code>^</code> and <code>_</code></p>
-                <p class="title2" >1.1 Basic Usage</p>
+                <p class="title1" style="margin-top:0">1 Command: <code>\frac</code> <code>\cfrac</code> <code>\dfrac</code> <code>\tfrac</code></p>
                 <p>
-                    Superscripts and subscripts are typeset using the symbol <code>^</code> and <code>_</code> . A long-expression needs to be collected in braces.
+                    A fraction is typeset using <code>\frac</code>,<code>\cfrac</code>,<code>\dfrac</code> or <code>\tfrac</code>.
                 </p>
-                <div class="t-editor t-editor-small">
+                <pre>
+                <code class="block-code">\frac{numerator}{denominator}</code></pre>
+
+                <div class="t-editor">
                     <div class="latex-editor t-code">
-                        <textarea class="latex-input base"  spellcheck="false">a^2+b^2    \quad
-a^{i+2}+b^{i+2}    \quad
-\Omega ^{i+2}</textarea>
+                        <textarea class="latex-input base"  spellcheck="false">\frac{a}{b} 
+\dfrac{a}{b} 
+\cfrac{a}{b} 
+\tfrac{a}{b}                            
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <p>There are two differences between these four commands:</p>
+                <p>
+                    1. <code>\tfrac</code> typeset  a fraction in text style. <code>\frac</code>, <code>\dfrac</code>, <code>\cfrac</code> typeset  a fraction in display style.
+                    So a fraction typeset using <code>\tfrac</code> is smaller than others.
+                </p>
+                <p>
+                    2. When typeset a mixed fraction using <code>\frac</code> , like a fraction is embedded within another fraction, the inner fraction will appear smaller.
+                    Whereas <code>\tfrac</code>, <code>\dfrac</code>, <code>\cfrac</code> typeset fractions are all the same size.
+                </p>
+                <p>
+                    Here is an example to illustrate the differences between <code>\frac</code>, <code>\dfrac</code>, <code>\cfrac</code>, and <code>\tfrac</code>
+                </p>
+                <div class="t-editor ">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\tfrac{1}{a+\tfrac{1}{b+c+\tfrac{1}{d+e} } } 
+                        </textarea>
+                        <div class="latex-show base"></div>
+                        <div class="tips"></div>
+                    </div>
+                    <div class="t-show">
+                    </div>
+                </div>
+                <div class="t-editor t-editor-large">
+                    <div class="latex-editor t-code">
+                        <textarea class="latex-input base"  spellcheck="false">\frac{1}{a+\frac{1}{b+c+\frac{1}{d+e} } } 
+                        </textarea>
                         <div class="latex-show base"></div>
                         <div class="tips"></div>
                     </div>
@@ -114,11 +150,10 @@ a^{i+2}+b^{i+2}    \quad
                     </div>
                 </div>
 
-                <div class="t-editor t-editor-small">
+                <div class="t-editor t-editor-large">
                     <div class="latex-editor t-code">
-                        <textarea class="latex-input base"  spellcheck="false">A_1+B_1    \quad
-A_{n+1}+B_{n+1}    \quad
-\Omega _{n+1}</textarea>
+                        <textarea class="latex-input base"  spellcheck="false">\dfrac{1}{a+\dfrac{1}{b+c+\dfrac{1}{d+e} } } 
+                        </textarea>
                         <div class="latex-show base"></div>
                         <div class="tips"></div>
                     </div>
@@ -126,17 +161,20 @@ A_{n+1}+B_{n+1}    \quad
                     </div>
                 </div>
 
-                <p>The symbols <code>_</code> and <code>^</code> can be combined in the same expression.</p>
-                <div class="t-editor t-editor-small">
+                <div class="t-editor t-editor-large">
                     <div class="latex-editor t-code">
-                        <textarea class="latex-input base"  spellcheck="false">\int_a^b    \quad
-A_{n+1}^{i+1}</textarea>
+                        <textarea class="latex-input base"  spellcheck="false">\cfrac{1}{a+\cfrac{1}{b+c+\cfrac{1}{d+e} } } 
+                        </textarea>
                         <div class="latex-show base"></div>
                         <div class="tips"></div>
                     </div>
                     <div class="t-show">
                     </div>
                 </div>
+
+               
+
+               
 
             </div>
         </div>

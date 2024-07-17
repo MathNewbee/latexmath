@@ -84,7 +84,7 @@
 .editor-container{float:left;width:1350px;overflow: hidden;}
 .help{border:1px solid #ccc;float:left;width:675px;height:600px;border-radius: 5px;overflow: hidden;margin-left:10px}
 
-.input{width:664px;border-radius: 5px; border:1px solid #ccc;float:left;}
+.input{width:663px;border-radius: 5px; border:1px solid #ccc;float:left;}
 .input-title{height:30px;line-height:30px;padding-left:10px;background-color: #ccc;width:663px;border-top-right-radius: 5px;border-top-left-radius: 5px;}
 
 
@@ -154,8 +154,12 @@
 .latex-editor .tip-name .token{color:#f70000}
 .latex-editor .tip-img{float:right;height:30px;justify-content: center;display: flex;align-items: center;flex-direction: column;margin-right:15px;color:#666;font-size:16px;}
 
+.left-lable{float:left;margin-right: 15px;}
+.OCR{color:red}
 
-#editor{width:664px;height:570px;}
+
+
+#editor{width:663px;height:570px;}
 #show-content{padding-bottom:30px;padding-top:30px;min-height: 400px;}
 
 .tutorial{overflow: hidden;}
@@ -173,7 +177,9 @@
 .t-right{float:left;width:1000px;padding-left:50px;padding-top:30px;}
 .t-right h1{text-align: left;font-size:32px;border-bottom:1px solid #ccc;padding-bottom:10px;padding-left: 10px;}
 .t-right .t-content{margin-top:20px;margin-bottom: 10px;font-size: 18px;color:#444;padding-left:10px}
-.t-right code{background-color: #eee;padding:5px 5px;color:#fb0202}
+.t-right code{background-color: #eee;padding:5px 5px;color:#333;margin-bottom:10px}
+.t-right code.block-code{display: block;padding:15px}
+
 .t-right l{background-color: #eee;padding:2px 8px;}
 .t-right .title1{font-size:24px;margin-bottom:20px;font-weight: bold;margin-top:100px}
 .t-right .title2{font-size:20px;margin-bottom:5px;font-weight: bold;}
