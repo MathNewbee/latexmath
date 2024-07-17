@@ -1,5 +1,5 @@
 ### Online Latex Equation Editor: [https://latexmath.online/](https://latexmath.online/)
-An online latex equation editor contains code autocompletion, WYSIWYG and symbol lookup.
+A free online latex equation editor contains code autocompletion, WYSIWYG, and symbol lookup.
 Later I will add equation image OCR and saving equations.
 
 
