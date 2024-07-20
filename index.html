@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Online LaTeX Equation Editor - Free Math Editor</title>
 <meta name="description" content="Write LaTeX math equations, formulas, and symbols easily with the free online LaTeX equation editor. Code autocomplete and IntelliSense. Supports formulas for physics, and chemistry. The equation can be exported as JPG, PNG, or SVG."/>
-<meta name="keywords" content="Online Equation Editor, Online Math Editor, Math Editor, Equation Editor, LaTeX Math Editor, Online editor" />
+<meta name="keywords" content="Online Equation Editor, Online Math Editor, Math Editor, Equation Editor, LaTeX Math Editor, Online editor, latex formula editor, latex writing equations" />
 <meta name="robots" content="all" />
 <meta name="author" content="MathNewbee" />
 <meta name="copyright" content="MathNewbee" />
@@ -30,6 +30,9 @@ MathJax = {
 					$(this).attr("title" , code)
 					$(this).attr("code" , code)
 				}
+
+				var code = $(this).attr("code")
+				$(this).attr("title" , code)
 			})
 			$(".loading-cover").hide()
 			$(".container").show();
@@ -52,6 +55,7 @@ MathJax = {
 <script src="/js/list.js"></script>
 <script src="/js/compressed.js"></script>
 <!-- <script src="/js/ocr.js"></script> -->
+
 <script src="/js/main.js"></script>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V6XK7Q3J9Q"></script>
@@ -80,13 +84,13 @@ MathJax = {
 
 <div class="head">
 	<div class="logo">
-		<div class="add-text">LaTeX Math</div>
-		<div class="editor-text">online editor</div>
+		<div class="add-text"><a href="/">LaTeX Math</a></div>
+		<div class="editor-text"><a href="/">online editor</a></div>
 	</div>
 	<div class="nav">
 		<a class="now">Editor</a>
 		<a href="/tutorial/intro.html">Tutorial</a>
-		<!-- <a href="/symbols.html">Symbols</a> -->
+		<a href="/symbols.html">Symbols</a>
 	</div>
 	<div class="lang">
 		<img src="/images/earth.png">

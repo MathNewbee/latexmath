@@ -30,6 +30,9 @@ MathJax = {
 					$(this).attr("title" , code)
 					$(this).attr("code" , code)
 				}
+
+				var code = $(this).attr("code")
+				$(this).attr("title" , code)
 			})
 			$(".loading-cover").hide()
 			$(".container").show();
@@ -79,8 +82,8 @@ MathJax = {
 
 <div class="head">
 	<div class="logo">
-		<div class="add-text">LaTeX Math</div>
-		<div class="editor-text">editore online</div>
+		<div class="add-text"><a href="/">LaTeX Math</a></div>
+		<div class="editor-text"><a href="/">online editor</a></div>
 	</div>
 	<div class="nav">
 		<a class="now">editore</a>

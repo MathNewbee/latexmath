@@ -6,7 +6,9 @@
 .head{height:60px;background-color: #96b97d;min-width: 1360px;overflow: hidden;}
 .logo{padding-top: 10px;width:160px;text-align: center;margin-left:10px;float:left}
 .add-text{font-size:30px;line-height: 25px; color:#fff;letter-spacing: -2px;}
+.add-text a{color:#fff}
 .editor-text{font-size:16px;color:#fff;line-height: 20px;letter-spacing: 1px;}
+.editor-text  a{color:#fff}
 
 .lang{float:right;margin-right: 50px;padding-top:14px}
 .lang:hover{cursor: pointer;}
@@ -18,6 +20,9 @@
 .nav{float: left;line-height: 60px;height: 60px;margin-left: 60px;}
 .nav a{color:#fff;font-size:22px;margin-left:30px}
 .nav a.now{border-bottom:2px solid #fff}
+
+.bg-success{background-color: #96b97d;}
+.bg-danger{background-color: #c24d17;}
 
 @-webkit-keyframes scale {
     0% {
@@ -71,7 +76,7 @@
     animation-fill-mode: both;
     display: inline-block; 
 }
-.loading-cover{position: absolute;width:100%;height: 100%;background-color: #96b97d;z-index: 999;}
+.loading-cover{position: absolute;width:100%;height: 100%;background-color: #96b97d;z-index: 999;top:0}
 .loading{width:300px;text-align: center;margin:0 auto;margin-top:300px}
 .loader{margin-top:10px}
 .loading .big-text{font-size:50px;; color:#fff;letter-spacing: -3px;line-height: 1;}
@@ -114,6 +119,7 @@
 
 .help-content t{float:left;cursor:pointer; display: block;background-color: #eee;font-size:25px;min-width: 35px;min-height: 35px;text-align: center;line-height: 35px;padding-top:9px;margin-left:5px;border-radius: 5px;}
 .help-content t:hover{background-color:#96b97d ;}
+.help-content t.now{background-color:#96b97d ;}
 .help-content .catagory .block{overflow: hidden;padding-top: 15px;padding-bottom:5px;border-bottom:1px solid #ccc;}
 .help-content .catagory .block t{margin-bottom:10px;}
 .help-content .catagory .bblock t{padding-bottom:5px;margin-left:10px;padding-left:5px;padding-right: 5px;}
@@ -200,3 +206,11 @@
 .t-editor-largeX{height: 250px;}
 .t-editor-largeX .t-code{height: 250px;}
 .t-editor-largeX .t-show{height: 250px;}
+
+.symbol-title {font-size: 25px;padding-left:7px;font-weight: bold;margin-bottom: 0;border-bottom: 1px solid #ccc;margin-top:30px}
+
+.symbols-box{width:400px;background-color: #fff;border:1px solid #ccc;position: absolute;overflow: auto;display: none;background-color: #fff;z-index:2}
+.symbols-box .operation{height: 38px;border-top:1px solid #ccc;overflow: hidden;}
+.symbols-box .operation div{float:left;width:50%;text-align: center;line-height: 38px;cursor: pointer;}
+#symbol-code{height:150px;border:none;border-bottom:1px solid #ccc;width:100%}
+#symbol-show{height: 150px;width:100%;font-size: 28px;}

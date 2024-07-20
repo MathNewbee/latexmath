@@ -1,6 +1,5 @@
-// key是搜索内容 value是录入内容
 var tipMap = [
-    //空
+    //space
     ["left" , "left" , "" ],
     ["right" , "right" , "" ],
     ["quad" , "quad" , "\\quad" ],
@@ -8,13 +7,13 @@ var tipMap = [
     ["mathit" , "mathit" , "" ],
     ["unicode" , "unicode{x}" , "" , -2 ],
     
-    //符号大小
+    //Big
     ["big" , "big" , "" ],
     ["Big" , "Big" , "" ],
     ["bigg" , "bigg" , "" ],
     ["Bigg" , "Bigg" , "" ],
 
-    //左右括号大小
+    //left right for braces
     ["bigl" , "bigl" , "" ],
     ["Bigl" , "Bigl" , "" ],
     ["biggl" , "biggl" , "" ],
@@ -24,7 +23,7 @@ var tipMap = [
     ["Bigr" , "Bigr" , "" ],
     ["bigr" , "bigr" , "" ],
 
-    //希腊字母
+    //alphabet
     ["alpha" , "alpha" , "\\alpha"],
     ["beta" , "beta" , "\\beta"],
     ["gamma" , "gamma" , "\\gamma"],
@@ -42,7 +41,7 @@ var tipMap = [
     ["mu" , "mu" , "\\mu"],
     ["nu" , "nu" , "\\nu"],
     ["xi" , "xi" , "\\xi"],
-    // ["o" , "o" , "o"], 特殊
+    // ["o" , "o" , "o"], 
     ["pi" , "pi" , "\\pi"],
 
     ["varpi" , "varpi" , "\\varpi"],
@@ -72,13 +71,13 @@ var tipMap = [
     ["Omega" , "Omega" , "\\Omega"],
 
 
-    //希伯来字母
+    //
     ["aleph" , "aleph" , "\\aleph"],
     ["beth" , "beth" , "\\beth"],
     ["gimel" , "gimel" , "\\gimel"],
     ["daleth" , "daleth" , "\\daleth"],
 
-    //二元运算符
+    //operation
     // ["+" , "+" , "+"],
     // ["-" , "-" , "-"],
     ["times" , "times" , "\\times"],
@@ -106,7 +105,6 @@ var tipMap = [
     ["amalg" , "amalg" , "\\amalg"],
     ["dagger" , "dagger" , "\\dagger"],
 
-    //二元关系符
     // ["=" , "=" , "="],
     ["ne" , "ne" , "\\ne"],
     ["neq" , "neq" , "\\neq"],
@@ -203,7 +201,6 @@ var tipMap = [
     ["succapprox" , "succapprox" , "\\succapprox"],
     ["succnapprox" , "succnapprox" , "\\succnapprox"],
 
-    //几何符号
     ["parallel" , "parallel" , "\\parallel"],
     ["nparallel" , "nparallel" , "\\nparallel"],
     ["shortparallel" , "shortparallel" , "\\shortparallel"],
@@ -229,7 +226,6 @@ var tipMap = [
     ["blacktriangleleft" , "blacktriangleleft" , "\\blacktriangleleft"],
     ["blacktriangleright" , "blacktriangleright" , "\\blacktriangleright"],
 
-    //逻辑符号
     ["forall" , "forall" , "\\forall"],
     ["exists" , "exists" , "\\exists"],
     ["nexists" , "nexists" , "\\nexists"],
@@ -265,7 +261,6 @@ var tipMap = [
     ["lrcorner" , "lrcorner" , "\\lrcorner"],
 
 
-    //集合
     ["emptyset" , "emptyset" , "\\emptyset"],
     ["varnothing" , "varnothing" , "\\varnothing"],
     ["in" , "in" , "\\in"],
@@ -309,7 +304,6 @@ var tipMap = [
     ["varsupsetneqq" , "varsupsetneqq" , "\\varsupsetneqq"],
 
 
-    //箭头
     ["Rrightarrow" , "Rrightarrow" , "\\Rrightarrow"],
     ["Lleftarrow" , "Lleftarrow" , "\\Lleftarrow"],
     ["Rightarrow" , "Rightarrow" , "\\Rightarrow"],
@@ -380,7 +374,6 @@ var tipMap = [
     ["twoheadrightarrow" , "twoheadrightarrow" , "\\twoheadrightarrow"],
     ["twoheadleftarrow" , "twoheadleftarrow" , "\\twoheadleftarrow"],
 
-    //特殊
     ["infty" , "infty" , "\\infty"],
     ["complement" , "complement" , "\\complement"],
     ["backepsilon" , "backepsilon" , "\\backepsilon"],
@@ -440,7 +433,6 @@ var tipMap = [
     ["ntrianglerighteq" , "ntrianglerighteq" , "\\ntrianglerighteq"],
     
 
-    //分数
     ["frac" , "frac{}{}" , "\\frac{ \\Box }{ \\Box}" , -4 , {zoom:'60%',position:'relative',top: '11px',paddingRight:'10px'}],
     ["tfrac" , "tfrac{}{}" , "\\tfrac{ \\Box }{ \\Box}" , -4 , {zoom:'90%',position:'relative',top: '2px',paddingRight:'0px'}],
     ["dfrac" , "dfrac{}{}" , "\\dfrac{ \\Box }{ \\Box}" , -4 , {zoom:'60%',position:'relative',top: '11px',paddingRight:'10px'}],
@@ -448,7 +440,6 @@ var tipMap = [
     ["over" , "over " , " \\small \\Box \\over \\small \\Box" , -6 , {zoom:'60%',position:'relative',top: '11px',paddingRight:'10px'}],
     ["cancel" , "cancel{}" , "\\cancel{x}" , -2 ],
 
-    //标准函数值
     ["exp" , "exp" , "\\exp"],
     ["ln" , "ln" , "\\ln"],
     ["lg" , "lg" , "\\lg"],
@@ -470,12 +461,10 @@ var tipMap = [
     ["min" , "min" , "\\min"],
     ["max" , "max" , "\\max"],
 
-    //根式
     ["surd" , "surd" , "\\surd"],
     ["sqrt" , "sqrt{}" , "\\sqrt{\\Box}" , -2],
     ["sqrt" , "sqrt[]{}" , "\\sqrt[n]{\\Box}" , -4],
 
-    //微分与导数
     ["mathrm" , "mathrm{}" , "\\mathrm{A}",-2],
 
     ["lim" , "lim_{ \\to }" , "\\lim_{\\Box \\to \\Box}" , -7],
@@ -492,7 +481,6 @@ var tipMap = [
     ["hom" , "hom" , "\\hom"],
     ["lVert " , "\lVert  \\lVert " , "\\lVert \\Box \\lVert" , -8],
     
-    //积分
     ["int" , "int\\limits_{  }^{  }" , "\\int\\limits_{\\Box}^{\\Box}" , -8 , {zoom:'46%',position:'relative',top: '19px',paddingRight:'16px'}],
     ["int" , "int_{  }^{  }" , "\\int_{\\Box}^{\\Box}" , -8 , {zoom:'62%',position:'relative',top: '11px',paddingRight:'0px'} ],
 
@@ -505,7 +493,6 @@ var tipMap = [
     ["oiint" , "unicode{x222F}" , "\\unicode{x222F}" ],
     ["oiiint" , "unicode{x2230}" , "\\unicode{x2230}" ],
     
-    //大型运算
     ["sum" , "sum_{}^{}" , "\\sum_{\\Box}^{\\Box}" , -5 , {zoom:'60%',position:'relative',top: '11px',paddingRight:'10px'} ],
     ["sum" , "textstyle \\sum_{}^{}" , "\\textstyle \\sum_{\\Box}^{\\Box}" , -5 , {zoom:'85%',position:'relative',top: '3px',}  ],
     ["prod" , "prod_{}^{}" , "\\prod_{a}^{b}" , -5 , {zoom:'60%',position:'relative',top: '11px',paddingRight:'10px'}  ],
@@ -526,7 +513,6 @@ var tipMap = [
     ["bigwedge" , "bigwedge_{}^{}" , "\\bigwedge_{a}^{b}" , -5 , {zoom:'60%',position:'relative',top: '11px',paddingRight:'10px'}  ],
     ["bigwedge" , "textstyle \\bigwedge_{}^{}" , "\\textstyle \\bigwedge_{a}^{b}" , -5   ],
 
-    //上下标
     ["sideset" , "sideset{_1^2}{_3^4}X" , "\\sideset{_1^2}{_3^4}X" , -9   ],
     ["stackrel" , "stackrel{}{}" , "\\stackrel{u}{\\Box}" , -4],
     ["prime" , "prime" , "\\prime"],
@@ -550,12 +536,10 @@ var tipMap = [
     ["overbrace" , "overbrace{}^{}" , "\\overbrace{\\Box \\Box \\Box}^{n}" , -2 ,  {zoom:'70%',position:'relative',top: '7px'}],
     ["underbrace" , "underbrace{}^{}" , "\\underbrace{\\Box \\Box \\Box}^{n}" , -2 ,  {zoom:'70%',position:'relative',top: '7px'}],
 
-    //矩阵
     ["binom" , "binom{}{}" , "\\binom{n}{k}" , -4 ,  {zoom:'60%',position:'relative',top: '10px'}],
     ["tbinom" , "tbinom{}{}" , "\\tbinom{n}{k}" , -4 ,  {zoom:'85%',position:'relative',top: '4px', right:"-4px"}],
     ["dbinom" , "dbinom{}{}" , "\\dbinom{n}{k}" , -4 ,  {zoom:'60%',position:'relative',top: '10px'}],
 
-    //矩阵
     ["matrix" , "begin{matrix}\n   &  \\\\ \n   & \n\\end{matrix}" , "\\begin{matrix}\nx & y \\\\ \nz & v\n\\end{matrix}" , -27 ,  {zoom:'65%',position:'relative',top: '9px'}],
     ["vmatrix" , "begin{vmatrix}\n   &  \\\\ \n   & \n\\end{vmatrix}" , "\\begin{vmatrix}\nx & y \\\\ \nz & v\n\\end{vmatrix}" , -28 ,  {zoom:'60%',position:'relative',top: '10px' , right:"-5px"}],
     ["Vmatrix" , "begin{Vmatrix}\n   &  \\\\ \n   & \n\\end{Vmatrix}" , "\\begin{Vmatrix}\nx & y \\\\ \nz & v\n\\end{Vmatrix}" , -28 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
@@ -563,7 +547,6 @@ var tipMap = [
     ["Bmatrix" , "begin{Bmatrix}\n   &  \\\\ \n   & \n\\end{Bmatrix}" , "\\begin{Bmatrix}\nx & y \\\\ \nz & v\n\\end{Bmatrix}" , -28 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
     ["pmatrix" , "begin{pmatrix}\n   &  \\\\ \n   & \n\\end{pmatrix}" , "\\begin{pmatrix}\nx & y \\\\ \nz & v\n\\end{pmatrix}" , -28 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
 
-    //多项式
     ["cases" , "begin{cases}\n  &  \\\\\n & \n\\end{cases}" , "\\begin{cases}\ny=x \\\\\n y=x^2 \n\\end{cases}" , -20 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
 
     ["cases" , "begin{cases}\n    &  \\\\\n    & \n\\end{cases}" , "\\begin{cases}\nf(x)=x, & x<0 \\\\\n f(x)=x^2+1, & x\\ge 0 \n\\end{cases}" , -27 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
@@ -573,7 +556,6 @@ var tipMap = [
     ["array" , "begin{array}{ccc}\n  & & \\\\\n\\end{array}" , "\\begin{array}{ccc}\n f(x) & = & (a+b)^2 \\\\\n f(x) & = & a^2+2ab+b^2  \n\\end{array}" , -20 ,  {zoom:'39%',position:'relative',top: '27px' , right:"-5px"}],
 
 
-    //矩阵
     ["beginmatrix" , "begin{matrix}\n   &  \\\\ \n   & \n\\end{matrix}" , "\\begin{matrix}\nx & y \\\\ \nz & v\n\\end{matrix}" , -27 ,  {zoom:'65%',position:'relative',top: '9px'}],
     ["beginvmatrix" , "begin{vmatrix}\n   &  \\\\ \n   & \n\\end{vmatrix}" , "\\begin{vmatrix}\nx & y \\\\ \nz & v\n\\end{vmatrix}" , -28 ,  {zoom:'60%',position:'relative',top: '10px' , right:"-5px"}],
     ["beginVmatrix" , "begin{Vmatrix}\n   &  \\\\ \n   & \n\\end{Vmatrix}" , "\\begin{Vmatrix}\nx & y \\\\ \nz & v\n\\end{Vmatrix}" , -28 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
@@ -581,7 +563,6 @@ var tipMap = [
     ["beginBmatrix" , "begin{Bmatrix}\n   &  \\\\ \n   & \n\\end{Bmatrix}" , "\\begin{Bmatrix}\nx & y \\\\ \nz & v\n\\end{Bmatrix}" , -28 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
     ["beginpmatrix" , "begin{pmatrix}\n   &  \\\\ \n   & \n\\end{pmatrix}" , "\\begin{pmatrix}\nx & y \\\\ \nz & v\n\\end{pmatrix}" , -28 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
 
-    //多项式
     ["begincases" , "begin{cases}\n  &  \\\\\n  & \n\\end{cases}" , "\\begin{cases}\ny=x \\\\\n y=x^2 \n\\end{cases}" , -24 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
 
     ["begincases" , "begin{cases}\n    &  \\\\\n    & \n\\end{cases}" , "\\begin{cases}\nf(x)=x, & x<0 \\\\\n f(x)=x^2+1, & x\\ge 0 \n\\end{cases}" , -27 ,  {zoom:'55%',position:'relative',top: '14px' , right:"-5px"}],
@@ -591,7 +572,6 @@ var tipMap = [
     ["beginarray" , "begin{array}{ccc}\n  & & \\\\\n\\end{array}" , "\\begin{array}{ccc}\n f(x) & = & (a+b)^2 \\\\\n f(x) & = & a^2+2ab+b^2  \n\\end{array}" , -20 ,  {zoom:'39%',position:'relative',top: '27px' , right:"-5px"}],
 
     
-    //括号
     ["lbrack " , "lbrack" , "\\lbrack"],
     ["rbrack " , "rbrack" , "\\rbrack"],
     ["lbrace  " , "lbrace" , "\\lbrace"],
@@ -605,10 +585,8 @@ var tipMap = [
     ["lceil" , "lceil" , "\\lceil"],
     ["rceil" , "rceil" , "\\rceil"],
 
-    //换行
     ["displaylines" , "displaylines{}" , "\\displaylines{}" , -2],
 
-    //颜色
     ["color" , "color{}" , "{\\color{Green}color}" , -2],
     ["colorbox" , "colorbox{}{}" , "{\\colorbox{Green}{colorbox}}" , -4],
     ["bbox" , "bbox[]{}" , "{\\bbox[green,2pt]{bbox}}" , -4],
