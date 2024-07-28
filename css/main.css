@@ -111,22 +111,23 @@
 .show{width:1350px;height: 500px;font-size:30px;overflow:auto;}
 
 .type-list{overflow: hidden;border-bottom:2px solid #96b97d;padding-bottom:8px}
-.type-box{ padding:5px ; width:46px;font-size:12px;text-align: center;height: 40px;float: left;background-color: #fff;margin-left:8px;margin-top:8px;border:2px solid #ddd}
+.type-box{ padding:5px ; width:58px;font-size:12px;text-align: center;height: 58px;float: left;background-color: #fff;margin-left:8px;margin-top:8px;border:2px solid #ddd}
 .type-box:hover{border-color:#96b97d;cursor: pointer;}
-.type-box img{width:30px;height:30px}
+.type-box img{width:45px;height:45px}
 
-.help-content{height:492px;overflow: auto;}
+.help-content{height:523px;overflow: auto;}
 
 .help-content t{float:left;cursor:pointer; display: block;background-color: #eee;font-size:25px;min-width: 35px;min-height: 35px;text-align: center;line-height: 35px;padding-top:9px;margin-left:5px;border-radius: 5px;}
 .help-content t:hover{background-color:#96b97d ;}
 .help-content t.now{background-color:#96b97d ;}
-.help-content .catagory .block{overflow: hidden;padding-top: 15px;padding-bottom:5px;border-bottom:1px solid #ccc;}
+.help-content .catagory .block{overflow: hidden;padding-top: 5px;padding-bottom:5px;border-bottom:1px solid #ccc;}
 .help-content .catagory .block t{margin-bottom:10px;}
 .help-content .catagory .bblock t{padding-bottom:5px;margin-left:10px;padding-left:5px;padding-right: 5px;}
 .help-content .catagory .zero-margin mjx-container{margin-top:0;margin-bottom: 0;}
 .clear{clear: both;}
 .help-content .block-info{margin-bottom:8px;padding-left:12px}
 .help-content .block-info input{height:25px;line-height: 25px;outline: #96b97d;border:1px solid #999;padding-left:2px;width:80px;text-align: center;font-size:15px;border-radius: 4px;}
+.help-content .block-title{font-size:18px;margin-left:8px;margin-bottom: 10px;color:#c10000}
 
 .head-function{float:right;margin-right: 15px;}
 .head-function span{background-color:#fff;padding:2px 5px;border-radius: 3px;cursor: pointer;font-size: 14px;margin-left: 5px;}

@@ -169,7 +169,7 @@ var Main = {
 		})
 
 		self.editor.textarea.focus()
-		self.editor.tip.insertContent("e^{i \\pi }+1 = 0")
+		self.editor.tip.insertContent("\\widehat{\\dbinom{\\odot_\\text{v}\\odot}{\\wr}}\n\\quad\ne^{\\pi i }+1 = 0")
 
 		this.isInit = true
 	},
