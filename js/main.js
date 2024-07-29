@@ -171,6 +171,9 @@ var Main = {
 		self.editor.textarea.focus()
 		self.editor.tip.insertContent("\\widehat{\\dbinom{\\odot_{\\color{Red} \\text{v} }\\odot}{\\wr}}\n\\quad\ne^{\\pi i }+1 = 0")
 
+
+		// var symbolSearch = new SymbolSearch(document.getElementById("symbol-search-canvas") , document.getElementById("symbol-clear"))
+
 		this.isInit = true
 	},
 
@@ -189,14 +192,12 @@ var Main = {
 
 			sameContent += tipMap[i][0]+" "+tipMap[i][1]+"\r\n"
 		}
-		console.log(sameContent)
 	},
 	 
 
 
 	exportPNG:async function(){
 		var node = document.querySelector("#show .show-content")
-		console.log(node)
 
 		domtoimage.toPng(node).then(function (dataUrl) {
 			var link = document.createElement('a');
