@@ -11,6 +11,27 @@
 <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/css/main.css"/>
 <script>
+
+
+window.addEventListener("error", e => {
+	const tag = e.target
+	if (tag.tagName === 'SCRIPT' && !(e instanceof ErrorEvent)) {
+		const url=new URL(tag.src) 
+		if(url.pathname.indexOf("mathjax")<0){
+			return 
+		}
+		var script=document.createElement("script")
+		var pathname="/node_modules/mathjax-full/es5/mml-chtml.js" 
+		script.type = 'text/javascript';
+		script.id = "MathJax-script"
+  		script.src = pathname
+		document.head.appendChild(script,tag); 
+	}
+
+},true); 
+
+
+
 function show(element){if(!element){ return}element.style.display = "block";}
 function hide(element){if(!element){ return}element.style.display = "none";}
 setTimeout(function(){ hide(document.querySelector(".loading-cover"));show(document.querySelector(".container"))},5000)
@@ -34,14 +55,15 @@ MathJax = {
 				var code = $(this).attr("code")
 				$(this).attr("title" , code)
 			})
-			$(".loading-cover").hide()
-			$(".container").show();
+		
 			return MathJax.startup.defaultReady();
 		},
 		pageReady: () => {
 			window.mathjax_loaded = true 
 			Main.init()
-			return MathJax.startup.defaultPageReady();
+			return MathJax.startup.defaultPageReady().then(function () {
+				//finish render callback
+      		});
 		}
 	}
 };
@@ -49,7 +71,7 @@ MathJax = {
 </script>
 
 <!-- <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script> -->
-<script id="MathJax-script" async src="/node_modules/mathjax-full/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async src="/node_modules/mathjax-full/es5/mml-chtml.js" ></script>
 
 <script src="/js/dom-to-image.min.js"></script>
 <script src="/js/jq.js"></script>
@@ -65,12 +87,13 @@ MathJax = {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-V6XK7Q3J9Q');
 </script>
 
+
+
 <body>
-<div class="loading-cover">
+<!-- <div class="loading-cover">
 	<div class="loading">
 		<div class="big-text">LaTeX Math</div>
 		<div class="small-text">online editor</div>
@@ -82,7 +105,7 @@ MathJax = {
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="head">
 	<div class="logo">
@@ -109,7 +132,7 @@ MathJax = {
 	</div>
 </div>
 
-<div class="container" style="display: none;">
+<div class="container" >
 	<div class="content">
 		<div class="left"></div>
 		<div class="main">
@@ -199,7 +222,8 @@ MathJax = {
 
 						</div>
 					</div>
-					<div class="help-content">
+					
+					<div class="help-content" >
 						<div class="content-list">
 							<div class="catagory">
 								<div class="block" id="show-list">
