@@ -93,6 +93,17 @@
 .input-title{height:30px;line-height:30px;padding-left:10px;background-color: #ccc;width:663px;border-top-right-radius: 5px;border-top-left-radius: 5px;}
 
 
+.intro-container{width:1350px;margin:0 auto}
+.intro-container h1{font-size: 52px;font-weight: 500;margin-top:80px;text-align: center;line-height: 1.6;}
+.intro-container h1 b{color:#96b97d}
+.intro-container .intro-content{margin-top:8px;margin-bottom:50px;font-size: 25px;color:#555;text-align: center;}
+
+.intro-container .open-btn{cursor: pointer; width:300px;color:#fff;background-color: #96b97d;text-align: center;font-size: 30px;line-height: 2.5;border-radius: 10px;margin:100px auto;}
+
+.intro-image{width:1298px;overflow: hidden;margin:0 auto;margin-left:47px}
+.intro-image img{position: relative;top:-2px}
+.intro-container .function-title{font-size: 25px;color:#555;margin-bottom:15px;text-align: center;}
+
 .output{margin-top:10px;border:1px solid #ccc;border-radius: 5px;width:1350px;float: left;}
 .output .output-title{height:30px;line-height:30px;padding-left:10px;background-color: #ccc;width:1349px;border-top-right-radius: 5px;border-top-left-radius: 5px;}
 .output .output-zone{float:right;height: 30px;padding-right: 15px;text-align: right;position: relative;}

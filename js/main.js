@@ -12,6 +12,11 @@ var Main = {
 			$(".saveimg").hide();
 		})
 		
+		$("#open-editor").on("click" , function(){
+			$(".intro-container").hide(1000)
+			$(".container").show(1000)
+		})
+		
 		/**
 		 * save image
 		 */

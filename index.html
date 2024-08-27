@@ -32,9 +32,10 @@ window.addEventListener("error", e => {
 
 
 
-function show(element){if(!element){ return}element.style.display = "block";}
-function hide(element){if(!element){ return}element.style.display = "none";}
-setTimeout(function(){ hide(document.querySelector(".loading-cover"));show(document.querySelector(".container"))},5000)
+// function show(element){if(!element){ return}element.style.display = "block";}
+// function hide(element){if(!element){ return}element.style.display = "none";}
+// setTimeout(function(){ hide(document.querySelector(".loading-cover"));show(document.querySelector(".container"))},5000)
+
 MathJax = {
 	loader: {load: ['[tex]/cancel' , '[tex]/unicode' , '[tex]/ams' , '[tex]/require' , '[tex]/color' , '[tex]/bbox'] , },
 	tex: {
@@ -78,6 +79,7 @@ MathJax = {
 <script src="/js/util.js"></script>
 <script src="/js/list.js"></script>
 <script src="/js/compressed.js"></script>
+
 <!-- <script src="/js/ocr.js"></script> -->
 
 <script src="/js/main.js"></script>
@@ -132,7 +134,22 @@ MathJax = {
 	</div>
 </div>
 
-<div class="container" >
+<div class="intro-container">
+	<h1>Write LaTex equations easily with <br> <b>LaTeX Math Editor</b></h1>
+	<div class="intro-content">
+	Create quality math formulas easily and quickly
+	</div>
+	<div class="open-btn" id="open-editor">Open Editor</div>
+
+	<div class="intro-image">
+		<p class="function-title">IntelliSense & WYSIWYG</p>
+		<div style="overflow: hidden;">
+			<img src="/images/example.gif" alt="latex math editor" style="width:1300px">
+		</div>
+	</div>
+</div>
+
+<div class="container" style="display: none;">
 	<div class="content">
 		<div class="left"></div>
 		<div class="main">
