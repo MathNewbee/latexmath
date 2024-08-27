@@ -140,9 +140,9 @@
 .latex-editor textarea{width:100%;height:100%;border:none; resize: none;position:absolute ; z-index:2;top:0;left:0;color:rgba(0,0,0,0);caret-color:#000;text-decoration: none; font-weight: 400; font-family: "Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace"}
 .latex-editor .latex-show{width:100%;height:100%;position:absolute ; z-index:1;top:0;left:0;overflow-y: auto; overflow-x: auto; }
 
-.latex-editor .token_blackslash{color:#333} 
+.latex-editor .token_blackslash{color:#999} 
 .latex-editor .not_backslash{color:#ff9d0c} 
-.latex-editor .backslash{color:#333}          
+.latex-editor .backslash{color:#999}          
 .latex-editor .bracket0{color:#ef29d4}
 .latex-editor .bracket1{color:#109927}
 .latex-editor .bracket2{color:#ff9d0c}
@@ -151,6 +151,7 @@
 .latex-editor .num{color:#000}
 .latex-editor .block_token{color: #c24d17;}
 .latex-editor .token{color:#666}
+.latex-editor .command_token{color:#0374d8}
 .latex-editor .character{color:#c24d17}
 
 
