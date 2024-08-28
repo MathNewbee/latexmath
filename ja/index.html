@@ -27,9 +27,6 @@ window.addEventListener("error", e => {
 	}
 
 },true); 
-function show(element){if(!element){ return}element.style.display = "block";}
-function hide(element){if(!element){ return}element.style.display = "none";}
-setTimeout(function(){ hide(document.querySelector(".loading-cover"));show(document.querySelector(".container"))},5000)
 MathJax = {
 	loader: {load: ['[tex]/cancel' , '[tex]/unicode' , '[tex]/ams' , '[tex]/require' , '[tex]/color' , '[tex]/bbox'] , },
 	tex: {
@@ -116,10 +113,24 @@ MathJax = {
 		<a href="/es/index.html">Español</a><!--Spanish-->
 		<a href="/ja/index.html">日本語</a><!--Japan-->
 		<a href="/ko/index.html">한국어</a><!--Korea-->
+		<a href="/zh/index.html">简体中文</a><!--ZH-->
+		<a href="/tc/index.html">繁體中文</a><!--TC-->
 	</div>
 </div>
 
-<div class="container" >
+<div class="intro-container">
+	<h1>数式を簡単かつ高速に記述<br> <b>LaTeX Math Editor</b></h1>
+	<div class="open-btn" id="open-editor">Open Editor</div>
+
+	<div class="intro-image">
+		<p class="function-title">IntelliSense & WYSIWYG</p>
+		<div style="overflow: hidden;">
+			<img src="/images/example.gif" alt="latex math editor" style="width:1300px">
+		</div>
+	</div>
+</div>
+
+<div class="container" style="display: none;">
 	<div class="content">
 		<div class="left"></div>
 		<div class="main">
