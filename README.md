@@ -4,6 +4,6 @@ Later I will add equation image OCR and saving equations.
 
 
 
-<img src="https://github.com/MathNewbee/latexmath/blob/main/images/example.png">
+<img src="https://github.com/MathNewbee/latexmath/blob/main/images/example.gif">
 
 
